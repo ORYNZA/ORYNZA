@@ -1,0 +1,61 @@
+export const PACKAGES = [
+  {
+    id: 'essential',
+    name: 'Essential Invite',
+    price: 399,
+    priceDisplay: '₹399',
+    description: 'For a beautiful, straightforward digital invitation.',
+    recommended: false,
+    ctaText: 'Choose Essential',
+    inclusions: [
+      'One personalised digital invitation design',
+      'Couple names and core event details',
+      'One event',
+      'Shareable digital output',
+      'One revision',
+      'Delivery through the agreed digital channel after approval',
+    ],
+  },
+  {
+    id: 'wedding-plus',
+    name: 'Wedding Plus',
+    price: 899,
+    priceDisplay: '₹899',
+    description: 'For celebrations with a few special moments to bring together.',
+    recommended: true,
+    badge: 'Recommended',
+    ctaText: 'Choose Wedding Plus',
+    inclusions: [
+      'Personalised digital invitation',
+      'Up to three event sections',
+      'Ceremony, engagement or reception details as applicable',
+      'Venue links when supplied',
+      'A shareable invitation page or agreed digital format',
+      'Up to two revisions',
+      'Basic RSVP form setup where included in the agreed scope',
+    ],
+  },
+  {
+    id: 'wedding-concierge',
+    name: 'Wedding Concierge',
+    price: 1799,
+    priceDisplay: '₹1,799',
+    description: 'For families who want a more complete digital invitation and response experience.',
+    recommended: false,
+    ctaText: 'Choose Concierge',
+    inclusions: [
+      'Personalised invitation page',
+      'Up to five event sections',
+      'Couple and family invitation details',
+      'Venue and map links',
+      'RSVP form setup',
+      'Response summary using the configured form and spreadsheet',
+      'Shareable invitation link',
+      'Up to three revisions',
+      'One agreed post-delivery correction round',
+    ],
+  },
+];
+
+export const PRICING_DISCLAIMER =
+  'Introductory pricing for listed scope. Out-of-scope work, additional functions, or extra revision rounds can be quoted separately after reviewing your requirements. No payment is collected on this website; payment terms are confirmed directly with you before work begins.';

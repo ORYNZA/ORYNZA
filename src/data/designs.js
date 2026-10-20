@@ -1,0 +1,58 @@
+import { ASSETS } from '../config/assets';
+
+export const INVITATION_DESIGNS = [
+  {
+    id: 'timeless-ivory-gold',
+    name: 'Timeless Ivory & Gold',
+    category: 'classic',
+    categoryLabel: 'Classic & Timeless',
+    description: 'Understated stationery with fine gold detailing for couples who appreciate traditional elegance.',
+    image: ASSETS.mockups.timelessIvoryGold,
+    alt: 'Timeless Ivory and Gold digital wedding invitation preview with delicate gold borders and refined typography',
+  },
+  {
+    id: 'botanical-sage',
+    name: 'Botanical Sage',
+    category: 'botanical',
+    categoryLabel: 'Botanical & Foliage',
+    description: 'Natural botanical design with muted greenery and soft sage foliage for garden and outdoor ceremonies.',
+    image: ASSETS.mockups.botanicalSage,
+    alt: 'Botanical Sage digital wedding invitation preview with soft olive and sage foliage artwork',
+  },
+  {
+    id: 'blush-romance',
+    name: 'Blush Romance',
+    category: 'romantic',
+    categoryLabel: 'Romantic & Floral',
+    description: 'Soft blush accents and delicate floral elements for a gentle, romantic celebration.',
+    image: ASSETS.mockups.blushRomance,
+    alt: 'Blush Romance digital wedding invitation preview with dusty rose florals and warm ivory paper',
+  },
+  {
+    id: 'modern-minimal',
+    name: 'Modern Minimal',
+    category: 'minimal',
+    categoryLabel: 'Modern & Minimal',
+    description: 'Refined typography and generous whitespace for couples who value effortless contemporary simplicity.',
+    image: ASSETS.mockups.modernMinimal,
+    alt: 'Modern Minimal digital wedding invitation preview with editorial typography and generous negative space',
+  },
+  {
+    id: 'traditional-indian',
+    name: 'Traditional Indian',
+    category: 'traditional',
+    categoryLabel: 'Traditional & Festive',
+    description: 'A celebratory Indian-inspired stationery style combining ornamental motifs with warm ivory and gold.',
+    image: ASSETS.mockups.traditionalIndian,
+    alt: 'Traditional Indian digital wedding invitation preview with ornate gold motifs and celebratory styling',
+  },
+  {
+    id: 'evening-reception',
+    name: 'Evening Reception',
+    category: 'evening',
+    categoryLabel: 'Formal & Evening',
+    description: 'An elegant darker design with rich charcoal tones and restrained champagne-gold detailing.',
+    image: ASSETS.mockups.eveningReception,
+    alt: 'Evening Reception digital invitation preview with deep charcoal styling and champagne-gold accents',
+  },
+];
