@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { SITE } from '../../config/site';
+import { ASSETS } from '../../config/assets';
 
 const PACKAGE_OPTIONS = [
   'Not sure yet',
-  'Essential Invite',
-  'Wedding Plus',
-  'Wedding Concierge',
+  'Essential Invite (₹399)',
+  'Wedding Plus (₹899)',
+  'Wedding Concierge (₹1,799)',
 ];
 
 const STYLE_OPTIONS = [
@@ -16,15 +17,16 @@ const STYLE_OPTIONS = [
   'Modern Minimal',
   'Traditional Indian',
   'Evening Reception',
+  'Custom Bespoke Commission',
 ];
 
 const FUNCTIONS_OPTIONS = [
   'Not sure yet',
-  '1 Function',
-  '2 Functions',
-  '3 Functions',
-  '4 Functions',
-  '5+ Functions',
+  '1 Function (Essential)',
+  '2 Functions (e.g. Wedding & Reception)',
+  '3 Functions (e.g. Sangeet, Muhurtham & Reception)',
+  '4 Functions (e.g. Haldi, Sangeet, Wedding & Reception)',
+  '5+ Functions (Complete Wedding Week)',
 ];
 
 export default function ContactSection({ selectedPackage, selectedDesign, onPackageChange, onDesignChange }) {
@@ -33,7 +35,7 @@ export default function ContactSection({ selectedPackage, selectedDesign, onPack
     phone: '',
     coupleNames: '',
     weddingDate: '',
-    functions: 'Not sure yet',
+    functions: '3 Functions (e.g. Sangeet, Muhurtham & Reception)',
     notes: '',
   });
 
@@ -50,7 +52,7 @@ export default function ContactSection({ selectedPackage, selectedDesign, onPack
     if (!formData.phone.trim()) {
       errs.phone = 'Please provide a contact phone number.';
     } else if (cleanPhone.length < 10 || cleanPhone.length > 13 || !/^\d+$/.test(cleanPhone)) {
-      errs.phone = 'Please enter a valid 10-digit phone number (e.g., 9876543210).';
+      errs.phone = 'Please enter a valid phone number (at least 10 digits, e.g. 9876543210).';
     }
 
     setErrors(errs);
@@ -70,18 +72,18 @@ export default function ContactSection({ selectedPackage, selectedDesign, onPack
 
     // Assemble structured WhatsApp enquiry message
     const lines = [
-      `*ORYNZA Wedding Invitation Enquiry*`,
+      `✦ *ORYNZA WEDDING INVITATION ENQUIRY* ✦`,
       `---------------------------------`,
-      `*Name:* ${formData.name.trim()}`,
-      `*Contact:* ${formData.phone.trim()}`,
-      formData.coupleNames.trim() ? `*Couple:* ${formData.coupleNames.trim()}` : null,
+      `*Full Name:* ${formData.name.trim()}`,
+      `*Contact Phone:* +91 ${formData.phone.trim()}`,
+      formData.coupleNames.trim() ? `*Couple Names:* ${formData.coupleNames.trim()}` : null,
       formData.weddingDate ? `*Wedding Date:* ${formData.weddingDate}` : null,
-      `*Package:* ${selectedPackage || 'Not sure yet'}`,
-      `*Invitation Style:* ${selectedDesign || 'Not sure yet'}`,
-      formData.functions !== 'Not sure yet' ? `*Number of Functions:* ${formData.functions}` : null,
-      formData.notes.trim() ? `*Additional Notes:* ${formData.notes.trim()}` : null,
+      `*Chosen Package:* ${selectedPackage || 'Wedding Plus (₹899)'}`,
+      `*Chosen Style:* ${selectedDesign || 'Timeless Ivory & Gold'}`,
+      formData.functions ? `*Functions:* ${formData.functions}` : null,
+      formData.notes.trim() ? `*Special Notes / Requirements:* ${formData.notes.trim()}` : null,
       `---------------------------------`,
-      `Hi ORYNZA team! Please review my details and share the next steps.`,
+      `Hello ORYNZA Atelier Team! Please review my celebration details and let me know the next steps for creating our digital invitation suite.`,
     ].filter(Boolean);
 
     const fullMessage = lines.join('\n');
@@ -92,21 +94,52 @@ export default function ContactSection({ selectedPackage, selectedDesign, onPack
   };
 
   return (
-    <section id="contact" className="section contact-section" aria-label="Contact and Enquiry">
-      <div className="container contact-container">
+    <section id="contact" className="section contact-section" aria-label="Atelier Consultation and WhatsApp Enquiry">
+      {/* Background Decorative Layer */}
+      <div
+        className="contact-bg-layer"
+        style={{ backgroundImage: `url(${ASSETS.backgrounds.contact})` }}
+        aria-hidden="true"
+      />
+
+      <div className="container contact-container-inner">
+        {/* Section Header */}
         <div className="section-header text-center">
-          <span className="eyebrow">Studio Consultation</span>
-          <h2 className="section-title">Let's Create Something Meaningful</h2>
+          <div className="contact-header-badge">
+            <span className="badge-gem">✦</span>
+            <span>DIRECT STUDIO CONSULTATION</span>
+            <span className="badge-gem">✦</span>
+          </div>
+          <h2 className="section-title">Let’s Craft Your Digital Heirloom</h2>
           <p className="section-subtitle">
-            Tell us a little about your celebration, and we'll help you choose an invitation experience that suits your needs.
+            Share a few details about your celebration. We will review your dates, preferred design, and package scope, then connect directly with you on WhatsApp to begin typesetting.
           </p>
         </div>
 
+        {/* Selected Preferences Summary Pill Bar */}
+        {(selectedPackage || selectedDesign) && (
+          <div className="contact-selection-summary">
+            <span className="summary-label">Your Current Selection:</span>
+            {selectedPackage && (
+              <span className="summary-pill summary-pkg">
+                📦 Package: <strong>{selectedPackage}</strong>
+              </span>
+            )}
+            {selectedDesign && (
+              <span className="summary-pill summary-style">
+                🎨 Style: <strong>{selectedDesign}</strong>
+              </span>
+            )}
+          </div>
+        )}
+
+        {/* Consultation Form Card */}
         <div className="contact-card">
           <form className="contact-form" onSubmit={handleSubmit} noValidate>
+            {/* Row 1: Name and Phone */}
             <div className="form-group">
               <label htmlFor="contact-name" className="form-label">
-                Your Name <span className="required-star">*</span>
+                Your Full Name <span className="required-star">*</span>
               </label>
               <input
                 id="contact-name"
@@ -128,7 +161,7 @@ export default function ContactSection({ selectedPackage, selectedDesign, onPack
 
             <div className="form-group">
               <label htmlFor="contact-phone" className="form-label">
-                WhatsApp / Contact Number <span className="required-star">*</span>
+                WhatsApp Phone Number <span className="required-star">*</span>
               </label>
               <input
                 id="contact-phone"
@@ -148,9 +181,10 @@ export default function ContactSection({ selectedPackage, selectedDesign, onPack
               )}
             </div>
 
+            {/* Row 2: Couple Names & Wedding Date */}
             <div className="form-group">
               <label htmlFor="contact-couple" className="form-label">
-                Couple's Names <span style={{ color: 'var(--muted-taupe)', fontWeight: 400 }}>(if known)</span>
+                Couple Names <span className="optional-label">(if decided)</span>
               </label>
               <input
                 id="contact-couple"
@@ -164,7 +198,7 @@ export default function ContactSection({ selectedPackage, selectedDesign, onPack
 
             <div className="form-group">
               <label htmlFor="contact-date" className="form-label">
-                Wedding Date <span style={{ color: 'var(--muted-taupe)', fontWeight: 400 }}>(if known)</span>
+                Wedding Date <span className="optional-label">(or approximate month)</span>
               </label>
               <input
                 id="contact-date"
@@ -175,15 +209,16 @@ export default function ContactSection({ selectedPackage, selectedDesign, onPack
               />
             </div>
 
+            {/* Row 3: Package & Style Selectors */}
             <div className="form-group">
               <label htmlFor="contact-package" className="form-label">
-                Preferred Package
+                Preferred Suite Package
               </label>
               <select
                 id="contact-package"
                 className="form-select"
-                value={selectedPackage || 'Not sure yet'}
-                onChange={(e) => onPackageChange(e.target.value)}
+                value={selectedPackage ? (PACKAGE_OPTIONS.find(p => p.includes(selectedPackage)) || selectedPackage) : 'Wedding Plus (₹899)'}
+                onChange={(e) => onPackageChange(e.target.value.split(' (')[0])}
               >
                 {PACKAGE_OPTIONS.map((opt) => (
                   <option key={opt} value={opt}>
@@ -195,12 +230,12 @@ export default function ContactSection({ selectedPackage, selectedDesign, onPack
 
             <div className="form-group">
               <label htmlFor="contact-style" className="form-label">
-                Preferred Invitation Style
+                Preferred Invitation Collection
               </label>
               <select
                 id="contact-style"
                 className="form-select"
-                value={selectedDesign || 'Not sure yet'}
+                value={selectedDesign || 'Timeless Ivory & Gold'}
                 onChange={(e) => onDesignChange(e.target.value)}
               >
                 {STYLE_OPTIONS.map((opt) => (
@@ -211,9 +246,10 @@ export default function ContactSection({ selectedPackage, selectedDesign, onPack
               </select>
             </div>
 
+            {/* Row 4: Functions & Timeline Scale */}
             <div className="form-group form-col-span-2">
               <label htmlFor="contact-functions" className="form-label">
-                Number of Functions
+                Estimated Number of Functions
               </label>
               <select
                 id="contact-functions"
@@ -229,9 +265,10 @@ export default function ContactSection({ selectedPackage, selectedDesign, onPack
               </select>
             </div>
 
+            {/* Row 5: Additional Notes */}
             <div className="form-group form-col-span-2">
               <label htmlFor="contact-notes" className="form-label">
-                Additional Details or Questions
+                Additional Requirements or Personal Touches
               </label>
               <textarea
                 id="contact-notes"
@@ -239,32 +276,34 @@ export default function ContactSection({ selectedPackage, selectedDesign, onPack
                 rows="3"
                 value={formData.notes}
                 onChange={(e) => handleChange('notes', e.target.value)}
-                placeholder="Tell us about your events, special language requirements, or any particular design preferences..."
+                placeholder="Mention special family wording requirements, language scripts (e.g. Malayalam, Hindi, Tamil), venue locations, or specific aesthetic requests..."
               />
             </div>
 
+            {/* Submit Action Box */}
             <div className="whatsapp-submit-box form-col-span-2">
               <button
                 type="submit"
-                className="btn btn-primary btn-block"
+                className="btn btn-primary btn-block btn-wa-submit"
               >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                </svg>
-                <span>Continue on WhatsApp with My Enquiry</span>
+                <span className="wa-btn-icon" aria-hidden="true">💬</span>
+                <span>Send Enquiry Directly to Our Team on WhatsApp</span>
+                <span className="btn-arrow" aria-hidden="true">→</span>
               </button>
 
               <p className="whatsapp-note">
-                Submitting opens WhatsApp with your pre-filled celebration details so you can review and send directly to our team. No account creation or server storage is required.
+                <strong>How it works:</strong> Tapping this button prepares a formatted message with your celebration details in WhatsApp so you can review and send directly to our stationery designer. No account creation or server storage is required.
               </p>
 
               {submitted && (
-                <div style={{ background: '#EAF7ED', border: '1px solid #B8E4C1', padding: '0.85rem', borderRadius: '6px', color: '#1B5E20', fontSize: '0.85rem', textAlign: 'center' }}>
-                  ✓ WhatsApp chat opened! If the window did not open automatically, <a href={`${SITE.whatsappBaseUrl}`} target="_blank" rel="noopener noreferrer" style={{ fontWeight: 600, color: '#1B5E20', textDecoration: 'underline' }}>click here to start chat</a>.
+                <div className="whatsapp-success-banner" role="status">
+                  ✓ WhatsApp chat launched with your details! If your browser blocked the window, <a href={SITE.whatsappBaseUrl} target="_blank" rel="noopener noreferrer">click here to open WhatsApp directly</a>.
                 </div>
               )}
 
-              <div className="direct-wa-divider">or quick question</div>
+              <div className="direct-wa-divider">
+                <span>or speak with us directly</span>
+              </div>
 
               <a
                 href={SITE.whatsappBaseUrl}
@@ -272,7 +311,7 @@ export default function ContactSection({ selectedPackage, selectedDesign, onPack
                 rel="noopener noreferrer"
                 className="btn btn-secondary btn-block"
               >
-                <span>Start a Blank WhatsApp Conversation</span>
+                <span>Chat Directly with ORYNZA: {SITE.displayPhone}</span>
               </a>
             </div>
           </form>

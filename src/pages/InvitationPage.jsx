@@ -1,34 +1,70 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ASSETS } from '../config/assets';
 import { DEMO_INVITATIONS } from '../data/invitations';
+import { downloadICS } from '../lib/dates';
 
 export default function InvitationPage() {
   const { slug } = useParams();
   const invite = DEMO_INVITATIONS[slug];
   const [showRsvpModal, setShowRsvpModal] = useState(false);
   const [showMapModal, setShowMapModal] = useState(false);
-  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [selectedEventForMap, setSelectedEventForMap] = useState(null);
+  const [copiedShare, setCopiedShare] = useState(false);
+
+  // Live countdown state
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0, isPast: false });
+
+  useEffect(() => {
+    if (!invite || !invite.date) return;
+
+    const targetDate = new Date(`${invite.date}T10:00:00`).getTime();
+
+    const updateTimer = () => {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+        setTimeLeft({ days, hours, minutes, seconds, isPast: false });
+      } else {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0, isPast: true });
+      }
+    };
+
+    updateTimer();
+    const timer = setInterval(updateTimer, 1000);
+    return () => clearInterval(timer);
+  }, [invite]);
 
   if (!invite) {
     return (
-      <div className="invitation-page" style={{ alignItems: 'center', justifyContent: 'center', padding: '3rem 1.5rem', textAlign: 'center' }}>
-        <div className="invitation-card-editorial" style={{ maxWidth: '500px' }}>
+      <div className="invitation-page invitation-not-found">
+        <div className="invitation-card-editorial not-found-card">
           <img
             src={ASSETS.brand.logo}
             alt="ORYNZA"
-            style={{ height: '40px', margin: '0 auto 1.5rem' }}
+            className="not-found-logo"
+            width="140"
+            height="46"
           />
-          <h2 style={{ fontSize: '1.8rem', marginBottom: '0.75rem' }}>Invitation Not Found</h2>
-          <p style={{ color: 'var(--muted-taupe)', marginBottom: '1.75rem' }}>
-            We could not find an invitation link for “{slug}”. Please check your link or explore our demonstration invitations.
+          <span className="eyebrow">Invitation Link Not Found</span>
+          <h2 className="not-found-title">Looking for an Invitation?</h2>
+          <p className="not-found-desc">
+            We could not find an invitation record for “{slug}”. Please verify the couple’s link or explore our demonstration invitations.
           </p>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+          <div className="not-found-actions">
             <Link to="/invite/demo-wedding" className="btn btn-primary">
-              View Sample Wedding Invitation
+              View Sample Wedding Invitation (Aarav &amp; Meera)
             </Link>
-            <Link to="/" className="btn btn-secondary">
-              Return to ORYNZA Home
+            <Link to="/invite/example-couple" className="btn btn-secondary">
+              View Botanical Invitation (Rohan &amp; Ananya)
+            </Link>
+            <Link to="/" className="btn btn-outline-gold">
+              Return to ORYNZA Studio Home
             </Link>
           </div>
         </div>
@@ -36,104 +72,243 @@ export default function InvitationPage() {
     );
   }
 
+  const handleShare = () => {
+    const url = window.location.href;
+    const shareText = `You are warmly invited to celebrate the wedding of ${invite.couple.partnerA} & ${invite.couple.partnerB}. View invitation: ${url}`;
+    
+    if (navigator.share) {
+      navigator.share({
+        title: `${invite.couple.partnerA} & ${invite.couple.partnerB}'s Wedding Invitation`,
+        text: shareText,
+        url: url,
+      }).catch(() => {});
+    } else {
+      // Fallback copy to clipboard
+      navigator.clipboard.writeText(url).then(() => {
+        setCopiedShare(true);
+        setTimeout(() => setCopiedShare(false), 2500);
+      });
+    }
+  };
+
+  const handleAddToCalendar = (event) => {
+    downloadICS({
+      title: `${invite.couple.partnerA} & ${invite.couple.partnerB}'s Wedding: ${event.title}`,
+      date: invite.date,
+      time: '10:00',
+      endTime: '14:00',
+      location: `${event.venue}, ${invite.venue.city}`,
+      description: `${event.note} Dress code: ${event.dressCode}`,
+    });
+  };
+
   return (
-    <div className="invitation-page">
+    <div className={`invitation-page theme-${invite.theme || 'ivory'}`}>
       {/* Demonstration Banner */}
       {invite.isDemonstration && (
-        <div className="invitation-banner">
-          {invite.disclaimer}
+        <div className="invitation-demo-banner" role="alert">
+          <span className="banner-sparkle">✦</span>
+          <span>{invite.disclaimer}</span>
+          <span className="banner-sparkle">✦</span>
         </div>
       )}
 
-      <header style={{ padding: '1.25rem 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid var(--border-line)', background: 'var(--white-ivory)' }}>
-        <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
-          <img src={ASSETS.brand.logo} alt="ORYNZA" style={{ height: '30px' }} />
+      {/* Invitation Header Bar */}
+      <header className="invitation-top-header">
+        <Link to="/" className="invitation-brand-link" title="Return to ORYNZA Studio">
+          <img src={ASSETS.brand.logo} alt="ORYNZA" className="invitation-header-logo" width="120" height="40" />
         </Link>
-        <Link to="/" className="btn btn-secondary btn-sm" style={{ minHeight: '34px', padding: '0.35rem 0.9rem', fontSize: '0.8rem' }}>
-          ← Back to Studio
-        </Link>
+        <div className="invitation-header-actions">
+          <button
+            type="button"
+            className="btn btn-secondary btn-sm invite-share-btn"
+            onClick={handleShare}
+          >
+            {copiedShare ? '✓ Link Copied!' : '📤 Share Invite'}
+          </button>
+          <Link to="/" className="btn btn-outline-gold btn-sm invite-back-btn">
+            ← Atelier Home
+          </Link>
+        </div>
       </header>
 
-      <main className="invitation-container">
+      <main className="invitation-container" id="invitation-main">
         {/* Cover Stationery Card */}
         <div className="invitation-card-editorial">
+          {/* Couple Monogram Frame Seal */}
           <div className="invitation-monogram-badge">
             <img
               src={ASSETS.decorative.monogramFrame}
               alt=""
               aria-hidden="true"
-              style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+              className="invitation-seal-wreath"
             />
+            <span className="invitation-seal-text">{invite.couple.monogram}</span>
           </div>
 
+          {/* Parents' Blessing / Family Wording */}
           <p className="invitation-parents-wording">
             {invite.couple.parentsWording}
           </p>
 
+          {/* Couple Names */}
           <h1 className="invitation-couple-title">
-            {invite.couple.partnerA} &amp; {invite.couple.partnerB}
+            <span className="partner-name">{invite.couple.partnerA}</span>
+            <span className="partner-amp">&amp;</span>
+            <span className="partner-name">{invite.couple.partnerB}</span>
           </h1>
 
+          {/* Formal Invitation Text */}
           <p className="invitation-wording-text">
             {invite.couple.invitationText}
           </p>
 
+          {/* Date & Primary Venue Box */}
           <div className="invitation-date-box">
             <p className="invitation-date-text">
               {invite.dateDisplay}
             </p>
-            <p style={{ fontSize: '0.95rem', color: 'var(--muted-taupe)', marginTop: '0.25rem' }}>
-              {invite.venue.name}, {invite.venue.city}
+            <p className="invitation-venue-subtitle">
+              {invite.venue.name} • {invite.venue.city}
             </p>
           </div>
 
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
+          {/* Live Countdown Clock */}
+          {!timeLeft.isPast && (
+            <div className="invitation-countdown-block">
+              <span className="invitation-countdown-label">COUNTDOWN TO OUR DAY</span>
+              <div className="invitation-timer-row">
+                <div className="invite-timer-unit">
+                  <span className="invite-timer-val">{timeLeft.days}</span>
+                  <span className="invite-timer-lbl">Days</span>
+                </div>
+                <span className="invite-timer-sep">:</span>
+                <div className="invite-timer-unit">
+                  <span className="invite-timer-val">{String(timeLeft.hours).padStart(2, '0')}</span>
+                  <span className="invite-timer-lbl">Hours</span>
+                </div>
+                <span className="invite-timer-sep">:</span>
+                <div className="invite-timer-unit">
+                  <span className="invite-timer-val">{String(timeLeft.minutes).padStart(2, '0')}</span>
+                  <span className="invite-timer-lbl">Mins</span>
+                </div>
+                <span className="invite-timer-sep">:</span>
+                <div className="invite-timer-unit">
+                  <span className="invite-timer-val invite-pulse">{String(timeLeft.seconds).padStart(2, '0')}</span>
+                  <span className="invite-timer-lbl">Secs</span>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Cover Action Buttons */}
+          <div className="invitation-cover-actions">
             <button
               type="button"
-              className="btn btn-primary btn-sm"
+              className="btn btn-primary"
               onClick={() => setShowRsvpModal(true)}
             >
-              RSVP for this Celebration
+              ✉ RSVP for Attendance
             </button>
             <button
               type="button"
-              className="btn btn-secondary btn-sm"
-              onClick={() => setShowMapModal(true)}
+              className="btn btn-secondary"
+              onClick={() => {
+                setSelectedEventForMap(invite.events[0]);
+                setShowMapModal(true);
+              }}
             >
-              Venue &amp; Map Directions
+              📍 Venue &amp; Driving Directions
             </button>
           </div>
         </div>
 
-        {/* Function Timeline Section */}
-        <section className="invitation-events-section" aria-label="Wedding Functions">
-          <h2 className="invitation-section-heading">Celebration Schedule</h2>
-          {invite.events.map((ev) => (
-            <article key={ev.id} className="invitation-event-card">
-              <h3 className="invitation-event-title">{ev.title}</h3>
-              <p className="invitation-event-meta">{ev.date} • {ev.time}</p>
-              <p className="invitation-event-venue"><strong>Location:</strong> {ev.venue}</p>
-              <p className="invitation-event-note">{ev.note}</p>
-              <p className="invitation-event-dress">Dress Code: {ev.dressCode}</p>
-            </article>
-          ))}
+        {/* Multi-Function Ceremony Schedule Section */}
+        <section className="invitation-events-section" aria-label="Wedding Functions Schedule">
+          <div className="invitation-section-header text-center">
+            <span className="invitation-section-eyebrow">CELEBRATION ITINERARY</span>
+            <h2 className="invitation-section-heading">Ceremony Functions</h2>
+            <p className="invitation-section-sub">
+              Please join us for each sacred milestone and joyous celebration.
+            </p>
+          </div>
+
+          <div className="invitation-events-grid">
+            {invite.events.map((ev, index) => (
+              <article key={ev.id} className="invitation-event-card">
+                <div className="event-card-top-bar">
+                  <span className="event-sequence-pill">Event 0{index + 1}</span>
+                  <button
+                    type="button"
+                    className="event-cal-btn"
+                    onClick={() => handleAddToCalendar(ev)}
+                    title="Add to Google Calendar / iCal"
+                  >
+                    📅 Add to Calendar
+                  </button>
+                </div>
+
+                <h3 className="invitation-event-title">{ev.title}</h3>
+                
+                <div className="invitation-event-meta-row">
+                  <span className="event-meta-item">🗓 {ev.date}</span>
+                  <span className="event-meta-divider">•</span>
+                  <span className="event-meta-item">⏰ {ev.time}</span>
+                </div>
+
+                <p className="invitation-event-venue">
+                  <strong>Location:</strong> {ev.venue}
+                </p>
+
+                <p className="invitation-event-note">{ev.note}</p>
+
+                <div className="invitation-event-bottom">
+                  <span className="invitation-event-dress">
+                    <strong>Dress Code:</strong> {ev.dressCode}
+                  </span>
+                  <button
+                    type="button"
+                    className="event-map-link-btn"
+                    onClick={() => {
+                      setSelectedEventForMap(ev);
+                      setShowMapModal(true);
+                    }}
+                  >
+                    📍 Maps
+                  </button>
+                </div>
+              </article>
+            ))}
+          </div>
         </section>
 
-        {/* RSVP Card */}
+        {/* RSVP Callout Box */}
         <section className="invitation-rsvp-box" aria-label="RSVP Response">
-          <h3 style={{ fontSize: '1.35rem', marginBottom: '0.5rem', color: 'var(--deep-charcoal)' }}>
-            Kindly Respond by {invite.rsvpConfig.deadline}
-          </h3>
-          <p style={{ color: 'var(--muted-taupe)', fontSize: '0.925rem', marginBottom: '1.25rem' }}>
-            Your presence will make our celebration truly complete.
-          </p>
-          <button
-            type="button"
-            className="btn btn-primary"
-            onClick={() => setShowRsvpModal(true)}
-          >
-            Submit Guest Attendance (Demo)
-          </button>
+          <div className="rsvp-box-inner">
+            <span className="rsvp-eyebrow">YOUR PRESENCE IS OUR GREATEST GIFT</span>
+            <h3 className="rsvp-heading">
+              Kindly Confirm Attendance by {invite.rsvpConfig.deadline}
+            </h3>
+            <p className="rsvp-desc">
+              To assist our families with seating, catering, and event arrangements, please let us know if you can join our celebration.
+            </p>
+            <div className="rsvp-actions-wrap">
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={() => setShowRsvpModal(true)}
+              >
+                Submit Guest Response (Demo)
+              </button>
+              <button
+                type="button"
+                className="btn btn-secondary"
+                onClick={handleShare}
+              >
+                {copiedShare ? '✓ Link Copied to Clipboard!' : 'Forward to Family on WhatsApp'}
+              </button>
+            </div>
+          </div>
         </section>
       </main>
 
@@ -147,33 +322,33 @@ export default function InvitationPage() {
               onClick={() => setShowRsvpModal(false)}
               aria-label="Close dialog"
             >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
+              ✕
             </button>
-            <div className="demo-disclaimer-pill" style={{ marginBottom: '0.75rem' }}>
-              Sample Invitation Flow
+            <div className="demo-disclaimer-pill">
+              Sample RSVP Workflow
             </div>
-            <h3 id="invitation-rsvp-title" style={{ marginBottom: '0.75rem' }}>RSVP Confirmation</h3>
-            <p style={{ color: 'var(--muted-taupe)', fontSize: '0.925rem', lineHeight: '1.6', marginBottom: '1.25rem' }}>
-              In a live couple invitation, this form opens your dedicated Google Form or customized guest attendance sheet.
+            <h3 id="invitation-rsvp-title" className="modal-title">RSVP for {invite.couple.partnerA} &amp; {invite.couple.partnerB}</h3>
+            <p className="modal-desc">
+              In a live couple invitation, this opens your customized Google Form or dedicated attendance portal where guests confirm headcount and dietary preferences.
             </p>
-            <div style={{ background: 'var(--warm-ivory)', border: '1px solid var(--subtle-border)', padding: '1rem', borderRadius: '8px', fontSize: '0.85rem', marginBottom: '1.5rem' }}>
-              <strong>Demonstration State:</strong> This invitation is configured with fictional data for <em>{invite.couple.partnerA} &amp; {invite.couple.partnerB}</em>. No live responses are being tracked.
+            <div className="modal-demo-box">
+              <p><strong>Demonstration Notice:</strong> Fictional couple celebration for presentation purposes. No real attendance entries are stored.</p>
+              <p style={{ marginTop: '0.5rem', fontSize: '0.85rem' }}>
+                Contact for assistance: <strong>{invite.rsvpConfig.contactPhone}</strong>
+              </p>
             </div>
             <button
               type="button"
               className="btn btn-primary btn-block"
               onClick={() => setShowRsvpModal(false)}
             >
-              Close
+              Close Window
             </button>
           </div>
         </div>
       )}
 
-      {/* Map Modal */}
+      {/* Map Directions Modal */}
       {showMapModal && (
         <div className="modal-overlay" onClick={() => setShowMapModal(false)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()} role="dialog" aria-modal="true" aria-labelledby="invitation-map-title">
@@ -183,38 +358,45 @@ export default function InvitationPage() {
               onClick={() => setShowMapModal(false)}
               aria-label="Close dialog"
             >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
+              ✕
             </button>
-            <div className="demo-disclaimer-pill" style={{ marginBottom: '0.75rem' }}>
-              Demonstration Map
+            <div className="demo-disclaimer-pill">
+              Venue Directions
             </div>
-            <h3 id="invitation-map-title" style={{ marginBottom: '0.5rem' }}>Venue Directions</h3>
-            <p style={{ color: 'var(--deep-charcoal)', fontWeight: 500, marginBottom: '0.25rem' }}>
-              {invite.venue.name}
-            </p>
-            <p style={{ color: 'var(--muted-taupe)', fontSize: '0.875rem', marginBottom: '1.25rem' }}>
+            <h3 id="invitation-map-title" className="modal-title">
+              {selectedEventForMap ? selectedEventForMap.venue : invite.venue.name}
+            </h3>
+            <p className="modal-desc">
               {invite.venue.address}
             </p>
-            <p style={{ color: 'var(--muted-taupe)', fontSize: '0.875rem', marginBottom: '1.5rem', lineHeight: '1.5' }}>
-              This is a sample wedding venue located in Kerala. On production customer invitations, this button provides direct one-touch Google Maps GPS navigation.
-            </p>
+            <div className="modal-demo-box">
+              <p>
+                In a live couple invitation, this button launches turn-by-turn Google Maps GPS driving directions directly on the guest's mobile phone.
+              </p>
+            </div>
             <button
               type="button"
               className="btn btn-primary btn-block"
               onClick={() => setShowMapModal(false)}
             >
-              Got it
+              Understood
             </button>
           </div>
         </div>
       )}
 
-      <footer style={{ padding: '2rem 1.5rem', textAlign: 'center', borderTop: '1px solid var(--border-line)', fontSize: '0.825rem', color: 'var(--muted-taupe)', background: 'var(--white-ivory)' }}>
-        <p>Created with ORYNZA Digital Invitation Studio</p>
-        <p style={{ marginTop: '0.25rem' }}>“Made for Moments That Matter.”</p>
+      {/* Reusable Invitation Footer */}
+      <footer className="invitation-footer">
+        <Link to="/" style={{ display: 'inline-block', marginBottom: '0.75rem' }}>
+          <img src={ASSETS.brand.logo} alt="ORYNZA" style={{ height: '32px', margin: '0 auto' }} />
+        </Link>
+        <p>Crafted by ORYNZA Digital Wedding Invitation Atelier</p>
+        <p className="invitation-footer-tagline">“Made for Moments That Matter.”</p>
+        <div style={{ marginTop: '1rem' }}>
+          <Link to="/" className="btn btn-secondary btn-sm">
+            Create an Invitation for Your Own Wedding →
+          </Link>
+        </div>
       </footer>
     </div>
   );
