@@ -3,6 +3,15 @@ import { Link } from 'react-router-dom';
 import { ASSETS } from '../../config/assets';
 import { NAV_LINKS, SITE } from '../../config/site';
 
+const DESKTOP_NAV = [
+  { href: '#designs', label: 'Collections' },
+  { href: '#preview-studio', label: 'Preview Studio' },
+  { href: '#experience', label: 'Celebration Moods', isSecondary: true },
+  { href: '#how-it-works', label: 'How It Works', isSecondary: true },
+  { href: '#pricing', label: 'Pricing' },
+  { href: '#faqs', label: 'FAQs' },
+];
+
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -34,8 +43,24 @@ export default function Header() {
     };
   }, [mobileMenuOpen]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 980) {
+        setMobileMenuOpen(false);
+        document.body.classList.remove('menu-open');
+      }
+    };
+    window.addEventListener('resize', handleResize, { passive: true });
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const handleNavClick = (e, href) => {
     setMobileMenuOpen(false);
+    if (href === '#hero' || href === '#') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
     if (href.startsWith('#')) {
       e.preventDefault();
       const target = document.querySelector(href);
@@ -52,7 +77,7 @@ export default function Header() {
   return (
     <header className={`site-header ${isScrolled ? 'is-scrolled' : ''}`}>
       <div className="container header-inner">
-        {/* Prominent Atelier Brand Identity */}
+        {/* Left: Dedicated Atelier Brand Identity */}
         <div className="header-brand-wrap">
           <a
             href="#hero"
@@ -64,8 +89,9 @@ export default function Header() {
               src={ASSETS.brand.logo}
               alt="ORYNZA — Boutique Digital Wedding Invitations"
               className="brand-logo-img"
-              width="168"
-              height="56"
+              width="155"
+              height="52"
+              loading="eager"
             />
           </a>
           <div className="brand-editorial-tagline" aria-hidden="true">
@@ -74,13 +100,13 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Desktop Navigation */}
+        {/* Centre: Main Curated Navigation */}
         <nav className="nav-desktop" aria-label="Main Atelier Navigation">
-          {NAV_LINKS.map((link) => (
+          {DESKTOP_NAV.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="nav-desktop-link"
+              className={`nav-desktop-link ${link.isSecondary ? 'nav-link-secondary' : ''}`}
               onClick={(e) => handleNavClick(e, link.href)}
             >
               {link.label}
@@ -88,7 +114,7 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Desktop Action Group */}
+        {/* Right: High-Intent Actions */}
         <div className="header-cta-group">
           <Link
             to="/invite/demo-wedding"
@@ -131,81 +157,85 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile Drawer Overlay */}
-      <div
-        className={`mobile-nav-overlay ${mobileMenuOpen ? 'is-open' : ''}`}
-        onClick={() => setMobileMenuOpen(false)}
-        aria-hidden="true"
-      />
+      {/* Mobile Drawer Overlay — strictly conditionally rendered */}
+      {mobileMenuOpen && (
+        <div
+          className="mobile-nav-overlay is-open"
+          onClick={() => setMobileMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
       
-      {/* Mobile Navigation Drawer */}
-      <div
-        id="mobile-nav-drawer"
-        className={`mobile-nav-menu ${mobileMenuOpen ? 'is-open' : ''}`}
-        role="dialog"
-        aria-modal="true"
-        aria-label="Mobile Navigation Drawer"
-      >
-        <div className="mobile-nav-top">
-          <div className="mobile-brand-head">
-            <img
-              src={ASSETS.brand.logo}
-              alt="ORYNZA"
-              className="mobile-menu-logo"
-              width="145"
-              height="48"
-            />
-            <span className="mobile-monogram-mark" aria-hidden="true">
-              <img src={ASSETS.brand.faviconMark} alt="" className="mobile-mark-img" />
-            </span>
+      {/* Mobile Navigation Drawer — strictly rendered only when open */}
+      {mobileMenuOpen && (
+        <div
+          id="mobile-nav-drawer"
+          className="mobile-nav-menu is-open"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Mobile Navigation Drawer"
+        >
+          <div className="mobile-nav-top">
+            <div className="mobile-brand-head">
+              <img
+                src={ASSETS.brand.logo}
+                alt="ORYNZA"
+                className="mobile-menu-logo"
+                width="145"
+                height="48"
+              />
+              <span className="mobile-monogram-mark" aria-hidden="true">
+                <img src={ASSETS.brand.faviconMark} alt="" className="mobile-mark-img" />
+              </span>
+            </div>
+            <p className="mobile-nav-quote">“{SITE.tagline}”</p>
+            <span className="mobile-nav-sub">Boutique Digital Wedding Invitations</span>
           </div>
-          <p className="mobile-nav-quote">“{SITE.tagline}”</p>
-          <span className="mobile-nav-sub">Boutique Digital Wedding Invitations</span>
-        </div>
 
-        <ul className="mobile-nav-list">
-          {NAV_LINKS.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className="mobile-nav-link"
-                onClick={(e) => handleNavClick(e, link.href)}
+          <ul className="mobile-nav-list">
+            {NAV_LINKS.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className="mobile-nav-link"
+                  onClick={(e) => handleNavClick(e, link.href)}
+                >
+                  <span>{link.label}</span>
+                  <span className="mobile-link-arrow" aria-hidden="true">→</span>
+                </a>
+              </li>
+            ))}
+            <li>
+              <Link
+                to="/invite/demo-wedding"
+                className="mobile-nav-link mobile-nav-highlight"
+                onClick={() => setMobileMenuOpen(false)}
               >
-                <span>{link.label}</span>
+                <span>✦ View Live Demo Invitation</span>
                 <span className="mobile-link-arrow" aria-hidden="true">→</span>
-              </a>
+              </Link>
             </li>
-          ))}
-          <li>
-            <Link
-              to="/invite/demo-wedding"
-              className="mobile-nav-link mobile-nav-highlight"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <span>✦ View Live Demo Invitation</span>
-              <span className="mobile-link-arrow" aria-hidden="true">→</span>
-            </Link>
-          </li>
-        </ul>
+          </ul>
 
-        <div className="mobile-cta-wrapper">
-          <a
-            href="#contact"
-            className="btn btn-primary btn-block"
-            onClick={(e) => handleNavClick(e, '#contact')}
-          >
-            Create My Invitation
-          </a>
-          <a
-            href={SITE.whatsappBaseUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-secondary btn-block mobile-wa-direct-btn"
-          >
-            <span>💬 Chat on WhatsApp: {SITE.displayPhone}</span>
-          </a>
+          <div className="mobile-cta-wrapper">
+            <a
+              href="#contact"
+              className="btn btn-primary btn-block"
+              onClick={(e) => handleNavClick(e, '#contact')}
+            >
+              Create My Invitation
+            </a>
+            <a
+              href={SITE.whatsappBaseUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-secondary btn-block mobile-wa-direct-btn"
+            >
+              <span>💬 Chat on WhatsApp: {SITE.displayPhone}</span>
+            </a>
+          </div>
         </div>
-      </div>
+      )}
     </header>
   );
 }
