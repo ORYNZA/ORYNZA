@@ -74,7 +74,7 @@ export default function StyleQuiz({ onSelectRecommendation }) {
   const currentQ = QUESTIONS[currentStep];
 
   return (
-    <section className="section style-quiz-section" aria-label="Invitation Style Discovery Quiz">
+    <section id="style-quiz" className="section style-quiz-section" aria-label="Invitation Style Discovery Quiz">
       <div className="container">
         <div className="section-header text-center">
           <div className="quiz-header-badge">

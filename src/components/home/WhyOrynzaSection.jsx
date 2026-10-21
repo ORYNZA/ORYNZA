@@ -4,7 +4,7 @@ import { ASSETS } from '../../config/assets';
 
 export default function WhyOrynzaSection() {
   return (
-    <section className="section why-orynza-section" aria-label="Why Choose ORYNZA Atelier">
+    <section id="why-orynza" className="section why-orynza-section" aria-label="Why Choose ORYNZA Atelier">
       <div className="container">
         <div className="section-header text-center">
           <div className="why-header-badge">

@@ -3,7 +3,7 @@ import { ASSETS } from '../../config/assets';
 
 export default function BrandIntro() {
   return (
-    <section className="section brand-intro-section" aria-label="Brand Manifesto & Philosophy">
+    <section id="atelier" className="section brand-intro-section" aria-label="Brand Manifesto & Philosophy">
       <div className="container">
         <div className="editorial-split">
           {/* Editorial Visual Composition with Floral Detail & Layered Sprig */}
