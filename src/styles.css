@@ -396,22 +396,27 @@ a:hover {
   box-shadow: 0 10px 30px -10px rgba(33, 31, 25, 0.08);
 }
 
+.header-container {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 2.5vw, 2.5rem);
+}
+
 .header-inner {
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: clamp(1rem, 2vw, 2rem);
+  justify-content: flex-start;
+  gap: clamp(1rem, 2vw, 2.5rem);
 }
 
-/* Left: Dedicated Atelier Brand Area (210px - 280px) */
+/* Left: Dedicated Atelier Brand Area */
 .header-brand-wrap {
   display: flex;
   align-items: center;
-  gap: 1.15rem;
+  gap: clamp(0.75rem, 1.2vw, 1.25rem);
   flex: 0 0 auto;
-  min-width: 210px;
-  max-width: 280px;
 }
 
 .brand-link {
@@ -437,11 +442,11 @@ a:hover {
   justify-content: center;
   border-left: 1px solid var(--champagne-gold);
   padding-left: 0.85rem;
-  line-height: 1.25;
+  line-height: 1.2;
   white-space: nowrap;
 }
 
-@media (min-width: 1240px) {
+@media (min-width: 1220px) {
   .brand-editorial-tagline {
     display: flex;
   }
@@ -449,14 +454,14 @@ a:hover {
 
 .tagline-eyebrow,
 .brand-editorial-eyebrow {
-  font-size: 0.62rem;
-  letter-spacing: 0.2em;
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
   font-weight: 700;
   color: var(--deep-gold);
   text-transform: uppercase;
   font-family: var(--font-sans);
   white-space: nowrap;
-  line-height: 1.1;
+  line-height: 1.15;
 }
 
 .tagline-phrase,
@@ -467,17 +472,16 @@ a:hover {
   color: var(--muted-taupe);
   letter-spacing: 0.01em;
   white-space: nowrap;
-  line-height: 1.1;
+  line-height: 1.15;
 }
 
 /* Centre: Main Navigation with Consistent Spacing */
 .nav-desktop {
   display: none;
   align-items: center;
-  justify-content: center;
-  gap: clamp(0.75rem, 1.4vw, 1.4rem);
-  flex: 1 1 auto;
-  margin-inline: 0.5rem;
+  gap: clamp(0.75rem, 1.2vw, 1.35rem);
+  flex: 0 1 auto;
+  margin-left: clamp(0.5rem, 1.5vw, 1.75rem);
 }
 
 @media (min-width: 980px) {
@@ -517,7 +521,7 @@ a:hover {
   width: 100%;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1339px) {
   .nav-desktop-link.nav-link-secondary {
     display: none;
   }
@@ -529,6 +533,7 @@ a:hover {
   align-items: center;
   gap: 0.75rem;
   flex: 0 0 auto;
+  margin-left: auto;
 }
 
 @media (min-width: 980px) {

@@ -76,7 +76,7 @@ export default function Header() {
 
   return (
     <header className={`site-header ${isScrolled ? 'is-scrolled' : ''}`}>
-      <div className="container header-inner">
+      <div className="header-container header-inner">
         {/* Left: Dedicated Atelier Brand Identity */}
         <div className="header-brand-wrap">
           <a
