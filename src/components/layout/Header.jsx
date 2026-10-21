@@ -9,7 +9,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 25);
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -52,25 +52,26 @@ export default function Header() {
   return (
     <header className={`site-header ${isScrolled ? 'is-scrolled' : ''}`}>
       <div className="container header-inner">
-        {/* Brand Identity */}
+        {/* Prominent Atelier Brand Identity */}
         <div className="header-brand-wrap">
           <a
             href="#hero"
             className="brand-link"
             onClick={(e) => handleNavClick(e, '#hero')}
-            aria-label="ORYNZA — Home"
+            aria-label="ORYNZA Atelier — Return to Home"
           >
             <img
               src={ASSETS.brand.logo}
-              alt="ORYNZA Digital Wedding Invitation Atelier"
+              alt="ORYNZA — Boutique Digital Wedding Invitations"
               className="brand-logo-img"
-              width="145"
-              height="48"
+              width="168"
+              height="56"
             />
           </a>
-          <span className="brand-tagline-micro" aria-hidden="true">
-            {SITE.tagline}
-          </span>
+          <div className="brand-editorial-tagline" aria-hidden="true">
+            <span className="tagline-eyebrow">DIGITAL WEDDING ATELIER</span>
+            <span className="tagline-phrase">{SITE.tagline}</span>
+          </div>
         </div>
 
         {/* Desktop Navigation */}
@@ -87,15 +88,15 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Desktop Actions */}
+        {/* Desktop Action Group */}
         <div className="header-cta-group">
           <Link
             to="/invite/demo-wedding"
             className="header-demo-link"
-            title="Experience a sample wedding invitation"
+            title="Experience a sample wedding invitation page"
           >
             <span className="live-dot" aria-hidden="true"></span>
-            <span>Live Demo</span>
+            <span>Live Guest Demo</span>
           </Link>
           <a
             href="#contact"
@@ -130,12 +131,14 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile Backdrop & Drawer */}
+      {/* Mobile Drawer Overlay */}
       <div
         className={`mobile-nav-overlay ${mobileMenuOpen ? 'is-open' : ''}`}
         onClick={() => setMobileMenuOpen(false)}
         aria-hidden="true"
       />
+      
+      {/* Mobile Navigation Drawer */}
       <div
         id="mobile-nav-drawer"
         className={`mobile-nav-menu ${mobileMenuOpen ? 'is-open' : ''}`}
@@ -144,14 +147,20 @@ export default function Header() {
         aria-label="Mobile Navigation Drawer"
       >
         <div className="mobile-nav-top">
-          <img
-            src={ASSETS.brand.logo}
-            alt="ORYNZA"
-            className="mobile-menu-logo"
-            width="130"
-            height="43"
-          />
+          <div className="mobile-brand-head">
+            <img
+              src={ASSETS.brand.logo}
+              alt="ORYNZA"
+              className="mobile-menu-logo"
+              width="145"
+              height="48"
+            />
+            <span className="mobile-monogram-mark" aria-hidden="true">
+              <img src={ASSETS.brand.faviconMark} alt="" className="mobile-mark-img" />
+            </span>
+          </div>
           <p className="mobile-nav-quote">“{SITE.tagline}”</p>
+          <span className="mobile-nav-sub">Boutique Digital Wedding Invitations</span>
         </div>
 
         <ul className="mobile-nav-list">
@@ -163,7 +172,7 @@ export default function Header() {
                 onClick={(e) => handleNavClick(e, link.href)}
               >
                 <span>{link.label}</span>
-                <span className="mobile-link-arrow">→</span>
+                <span className="mobile-link-arrow" aria-hidden="true">→</span>
               </a>
             </li>
           ))}
@@ -174,7 +183,7 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               <span>✦ View Live Demo Invitation</span>
-              <span className="mobile-link-arrow">→</span>
+              <span className="mobile-link-arrow" aria-hidden="true">→</span>
             </Link>
           </li>
         </ul>
@@ -191,9 +200,9 @@ export default function Header() {
             href={SITE.whatsappBaseUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-secondary btn-block"
+            className="btn btn-secondary btn-block mobile-wa-direct-btn"
           >
-            <span>Direct WhatsApp: {SITE.displayPhone}</span>
+            <span>💬 Chat on WhatsApp: {SITE.displayPhone}</span>
           </a>
         </div>
       </div>

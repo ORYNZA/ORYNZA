@@ -31,6 +31,20 @@ const MOODS = [
     designName: 'Botanical Sage',
   },
   {
+    id: 'blush-romance',
+    title: 'Floral Romance',
+    tagline: 'Dusty Rose, Coral Wash & Petal Whispers',
+    description: 'Soft pastels and watercolor floral botanicals designed for heartfelt romantic celebrations, pastel daytime ceremonies, and intimate poolside sangeets.',
+    colorTheme: 'blush',
+    accentColor: '#DE6B7A',
+    bgColor: '#FDF2F4',
+    textColor: '#881337',
+    image: ASSETS.mockups.blushRomance,
+    alt: 'Blush Romance wedding invitation preview with soft rose florals',
+    ceremonies: ['Pastel Pheras', 'Sangeet Soirée', 'Engagement Party'],
+    designName: 'Blush Romance',
+  },
+  {
     id: 'royal-ivory',
     title: 'Timeless Ivory & Gold',
     tagline: 'Heirloom Linen, Delicate Gold & Grand Traditions',
@@ -87,7 +101,7 @@ export default function CelebrationMoods({ onSelectMoodDesign }) {
           </div>
           <h2 className="section-title">Every Wedding Has Its Own Atmosphere</h2>
           <p className="section-subtitle">
-            From the auspicious warmth of saffron to the serene grace of garden sage and the nocturnal opulence of black-tie galas — explore the visual palettes of Indian weddings.
+            From the auspicious warmth of saffron to the serene grace of garden sage, poetic blush pastels, and the nocturnal opulence of black-tie galas — explore the visual palettes of Indian weddings.
           </p>
         </div>
 

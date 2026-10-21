@@ -9,12 +9,23 @@ export default function Hero({ onExploreDesigns, onCreateInvitation }) {
 
   const displayA = partnerA.trim() || 'Aarav';
   const displayB = partnerB.trim() || 'Meera';
-  const monogramText = `${displayA.charAt(0)} & ${displayB.charAt(0)}`;
+  const monogramA = displayA.charAt(0).toUpperCase() || 'A';
+  const monogramB = displayB.charAt(0).toUpperCase() || 'M';
+  const monogramText = `${monogramA} & ${monogramB}`;
+
+  const handleResetNames = () => {
+    setPartnerA('');
+    setPartnerB('');
+  };
 
   return (
     <section id="hero" className="hero-section" aria-label="Welcome to ORYNZA Digital Wedding Atelier">
-      {/* Background Decorative Layer */}
-      <div className="hero-bg-art" aria-hidden="true" style={{ backgroundImage: `url(${ASSETS.backgrounds.hero})` }} />
+      {/* Background Layer with Subtle Paper Wash */}
+      <div
+        className="hero-bg-art"
+        aria-hidden="true"
+        style={{ backgroundImage: `url(${ASSETS.backgrounds.hero})` }}
+      />
       <div className="hero-bg-overlay" aria-hidden="true" />
 
       <div className="container hero-grid">
@@ -22,7 +33,7 @@ export default function Hero({ onExploreDesigns, onCreateInvitation }) {
         <div className="hero-content">
           <div className="hero-eyebrow-badge">
             <span className="badge-sparkle">✦</span>
-            <span>Boutique Digital Wedding Atelier</span>
+            <span>BOUTIQUE DIGITAL WEDDING ATELIER</span>
             <span className="badge-sparkle">✦</span>
           </div>
 
@@ -34,10 +45,10 @@ export default function Hero({ onExploreDesigns, onCreateInvitation }) {
           </h1>
 
           <p className="hero-supporting-text">
-            Individually handcrafted digital wedding invitations, multi-event ceremony suites, and effortless guest RSVP coordination for Indian celebrations — honoring sacred traditions with contemporary digital grace.
+            Individually handcrafted digital wedding invitations, multi-event ceremony suites, and effortless guest RSVP coordination for Indian celebrations — honoring sacred family traditions with contemporary digital grace.
           </p>
 
-          {/* Primary Action Buttons */}
+          {/* Streamlined Primary & Secondary Action Group */}
           <div className="hero-cta-group">
             <button
               type="button"
@@ -55,13 +66,17 @@ export default function Hero({ onExploreDesigns, onCreateInvitation }) {
             >
               <span>Explore Collections</span>
             </button>
+          </div>
 
+          {/* Dedicated Editorial Demonstration Link Pill */}
+          <div className="hero-demo-pill-wrap">
             <Link
               to="/invite/demo-wedding"
-              className="btn btn-outline-gold hero-btn-demo"
+              className="hero-demo-pill"
+              title="Open full interactive wedding invitation page demonstration"
             >
               <span className="pulse-indicator" aria-hidden="true"></span>
-              <span>Live Guest Demo</span>
+              <span className="pill-text">Experience a Complete Wedding Suite: <strong>View Live Guest Demo →</strong></span>
             </Link>
           </div>
 
@@ -69,7 +84,7 @@ export default function Hero({ onExploreDesigns, onCreateInvitation }) {
           <div className="hero-trust-bar">
             <div className="hero-trust-item">
               <span className="trust-icon" aria-hidden="true">✍</span>
-              <span>Hand-Typeset Layouts</span>
+              <span>Individually Hand-Typeset</span>
             </div>
             <div className="hero-trust-divider" aria-hidden="true">•</div>
             <div className="hero-trust-item">
@@ -141,7 +156,7 @@ export default function Hero({ onExploreDesigns, onCreateInvitation }) {
 
             {/* Editorial Badge Ribbon */}
             <div className="hero-botanical-badge">
-              <span className="gold-gem">✦</span>
+              <span className="gold-gem" aria-hidden="true">✦</span>
               <span>Stationery Craftsmanship • Digital Ease</span>
             </div>
           </div>
@@ -149,29 +164,52 @@ export default function Hero({ onExploreDesigns, onCreateInvitation }) {
           {/* Interactive Live Name Personalization Widget */}
           <div className="hero-personalize-box">
             <div className="personalize-header">
-              <span className="personalize-title">✦ Try your names in our atelier</span>
-              <span className="personalize-hint">Updates live on card above</span>
+              <div className="personalize-title-group">
+                <span className="personalize-title">✦ Personalise with Your Names</span>
+                <span className="personalize-hint">Updates live on card above</span>
+              </div>
+              {(partnerA || partnerB) && (
+                <button
+                  type="button"
+                  className="personalize-reset-btn"
+                  onClick={handleResetNames}
+                  title="Reset to default sample names"
+                >
+                  Reset
+                </button>
+              )}
             </div>
+
             <div className="personalize-inputs">
-              <input
-                type="text"
-                className="personalize-field"
-                placeholder="Partner One (e.g. Aarav)"
-                value={partnerA}
-                onChange={(e) => setPartnerA(e.target.value)}
-                maxLength={20}
-                aria-label="Partner One Name"
-              />
-              <span className="personalize-amp">&amp;</span>
-              <input
-                type="text"
-                className="personalize-field"
-                placeholder="Partner Two (e.g. Meera)"
-                value={partnerB}
-                onChange={(e) => setPartnerB(e.target.value)}
-                maxLength={20}
-                aria-label="Partner Two Name"
-              />
+              <div className="personalize-field-wrap">
+                <label htmlFor="hero-partner-a" className="sr-only">Partner One Name</label>
+                <input
+                  id="hero-partner-a"
+                  type="text"
+                  className="personalize-field"
+                  placeholder="Partner One (e.g. Aarav)"
+                  value={partnerA}
+                  onChange={(e) => setPartnerA(e.target.value)}
+                  maxLength={24}
+                  autoComplete="off"
+                />
+              </div>
+
+              <span className="personalize-amp" aria-hidden="true">&amp;</span>
+
+              <div className="personalize-field-wrap">
+                <label htmlFor="hero-partner-b" className="sr-only">Partner Two Name</label>
+                <input
+                  id="hero-partner-b"
+                  type="text"
+                  className="personalize-field"
+                  placeholder="Partner Two (e.g. Meera)"
+                  value={partnerB}
+                  onChange={(e) => setPartnerB(e.target.value)}
+                  maxLength={24}
+                  autoComplete="off"
+                />
+              </div>
             </div>
           </div>
         </div>

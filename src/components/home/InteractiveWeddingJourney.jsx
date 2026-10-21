@@ -10,7 +10,8 @@ const EVENTS = [
     date: 'Sunday, 14 February 2027',
     time: '5:30 PM Onwards',
     venue: 'The Palm Courtyard & Poolside',
-    location: 'Kochi, Kerala',
+    location: 'Marine Drive Road, Kochi, Kerala',
+    mapQuery: 'Marine+Drive+Road+Kochi+Kerala',
     dressCode: 'Festive Pastel / Indian Traditional',
     description: 'An enchanting evening of intricate henna artistry, live acoustic music, sangeet performances, and celebratory culinary delights.',
   },
@@ -21,7 +22,8 @@ const EVENTS = [
     date: 'Monday, 15 February 2027',
     time: '10:15 AM – 12:00 PM',
     venue: 'Grand Heritage Mandapam',
-    location: 'Kochi, Kerala',
+    location: 'Marine Drive Road, Kochi, Kerala',
+    mapQuery: 'Marine+Drive+Road+Kochi+Kerala',
     dressCode: 'Traditional Festive Silk Attire',
     description: 'Auspicious wedding rituals conducted in the presence of beloved family and elders, followed by a grand celebratory Sadhya feast.',
   },
@@ -32,7 +34,8 @@ const EVENTS = [
     date: 'Monday, 15 February 2027',
     time: '7:00 PM Onwards',
     venue: 'The Grand Ballroom & Lawn',
-    location: 'Kochi, Kerala',
+    location: 'Marine Drive Road, Kochi, Kerala',
+    mapQuery: 'Marine+Drive+Road+Kochi+Kerala',
     dressCode: 'Formal Black-Tie / Elegant Ethnic',
     description: 'Cocktail toasts, dinner banquet, and an unforgettable evening of dancing and celebration under starlit canopies.',
   },
@@ -43,6 +46,9 @@ export default function InteractiveWeddingJourney() {
   const [showRsvpModal, setShowRsvpModal] = useState(false);
   const [showMapModal, setShowMapModal] = useState(false);
   const [showShareModal, setShowShareModal] = useState(false);
+  const [rsvpAttending, setRsvpAttending] = useState('yes');
+  const [rsvpGuests, setRsvpGuests] = useState('2 Guests');
+  const [rsvpFeedback, setRsvpFeedback] = useState(false);
 
   // Live Real-Time Countdown to Demo Wedding Date (15 Feb 2027)
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
@@ -71,6 +77,15 @@ export default function InteractiveWeddingJourney() {
   }, []);
 
   const activeEvent = EVENTS[activeEventIndex];
+
+  const handleTestRsvpSubmit = (e) => {
+    e.preventDefault();
+    setRsvpFeedback(true);
+    setTimeout(() => {
+      setRsvpFeedback(false);
+      setShowRsvpModal(false);
+    }, 2800);
+  };
 
   return (
     <section id="journey" className="section journey-section" aria-label="Interactive Wedding Guest Experience">
@@ -220,7 +235,7 @@ export default function InteractiveWeddingJourney() {
                       className="btn btn-outline-gold btn-sm"
                       onClick={() => setShowRsvpModal(true)}
                     >
-                      <span>Test RSVP Modal</span>
+                      <span>Test Sample RSVP</span>
                     </button>
                   </div>
                 </div>
@@ -278,7 +293,7 @@ export default function InteractiveWeddingJourney() {
         </div>
       </div>
 
-      {/* RSVP Modal */}
+      {/* Interactive RSVP Demonstration Modal */}
       {showRsvpModal && (
         <div className="modal-overlay" onClick={() => setShowRsvpModal(false)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()} role="dialog" aria-modal="true" aria-labelledby="journey-rsvp-title">
@@ -290,26 +305,76 @@ export default function InteractiveWeddingJourney() {
             >
               ✕
             </button>
-            <div className="modal-badge-pill">Demonstration Workflow</div>
+            <div className="modal-badge-pill">Interactive RSVP Demonstration</div>
             <h3 id="journey-rsvp-title" className="modal-title">Sample Guest RSVP Confirmation</h3>
             <p className="modal-desc">
-              In a live couple wedding suite, this action opens your private custom Google Form or agreed attendance portal.
+              Test how guests respond to an ORYNZA digital invitation. In a live couple suite, submissions sync seamlessly to your private Google Sheet.
             </p>
-            <div className="modal-demo-box">
-              <p><strong>Demonstration Notice:</strong> This is a frontend demo for <em>Aarav &amp; Meera</em>. No guest attendance data is recorded to any external server.</p>
-              <ul className="modal-features-list">
-                <li>✓ Function-by-function headcount (Haldi, Muhurtham, Reception)</li>
-                <li>✓ Dietary preferences &amp; family member names</li>
-                <li>✓ Automatically compiles into a private Google Sheet</li>
-              </ul>
-            </div>
-            <button
-              type="button"
-              className="btn btn-primary btn-block"
-              onClick={() => setShowRsvpModal(false)}
-            >
-              Close Demonstration
-            </button>
+
+            <form onSubmit={handleTestRsvpSubmit} className="modal-demo-form">
+              <div className="form-group" style={{ marginBottom: '1rem' }}>
+                <label className="form-label">Will you be attending?</label>
+                <div style={{ display: 'flex', gap: '1rem', marginTop: '0.25rem' }}>
+                  <label style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.9rem', cursor: 'pointer' }}>
+                    <input
+                      type="radio"
+                      name="demo-attending"
+                      value="yes"
+                      checked={rsvpAttending === 'yes'}
+                      onChange={() => setRsvpAttending('yes')}
+                    />
+                    <span>Accepts with Joy</span>
+                  </label>
+                  <label style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.9rem', cursor: 'pointer' }}>
+                    <input
+                      type="radio"
+                      name="demo-attending"
+                      value="no"
+                      checked={rsvpAttending === 'no'}
+                      onChange={() => setRsvpAttending('no')}
+                    />
+                    <span>Declines with Regrets</span>
+                  </label>
+                </div>
+              </div>
+
+              {rsvpAttending === 'yes' && (
+                <div className="form-group" style={{ marginBottom: '1rem' }}>
+                  <label htmlFor="demo-rsvp-guests" className="form-label">Total Attending from Family:</label>
+                  <select
+                    id="demo-rsvp-guests"
+                    className="form-select"
+                    value={rsvpGuests}
+                    onChange={(e) => setRsvpGuests(e.target.value)}
+                  >
+                    <option>1 Guest</option>
+                    <option>2 Guests</option>
+                    <option>3 Guests</option>
+                    <option>4 Guests</option>
+                    <option>5+ Family Members</option>
+                  </select>
+                </div>
+              )}
+
+              <div className="modal-demo-box">
+                <p><strong>Demonstration Notice:</strong> Fictional demonstration for <em>Aarav &amp; Meera</em>. No real guest data is saved to any server.</p>
+              </div>
+
+              {rsvpFeedback ? (
+                <div style={{ background: '#EAF7ED', border: '1px solid #B8E4C1', color: '#1B5E20', padding: '0.85rem', borderRadius: '6px', textAlign: 'center', fontSize: '0.88rem' }}>
+                  ✓ Demonstration RSVP Recorded! In a live couple suite, this entry automatically updates the family attendance spreadsheet.
+                </div>
+              ) : (
+                <div style={{ display: 'flex', gap: '0.75rem' }}>
+                  <button type="submit" className="btn btn-primary" style={{ flex: 1 }}>
+                    Simulate Guest Submission
+                  </button>
+                  <button type="button" className="btn btn-secondary" onClick={() => setShowRsvpModal(false)}>
+                    Close
+                  </button>
+                </div>
+              )}
+            </form>
           </div>
         </div>
       )}
@@ -336,13 +401,24 @@ export default function InteractiveWeddingJourney() {
                 In a live ORYNZA customer invitation, tapping this button opens your precise Google Maps coordinates with instant one-tap GPS navigation for guests driving to the venue.
               </p>
             </div>
-            <button
-              type="button"
-              className="btn btn-primary btn-block"
-              onClick={() => setShowMapModal(false)}
-            >
-              Understood
-            </button>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+              <a
+                href={`https://www.google.com/maps/search/?api=1&query=${activeEvent.mapQuery}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary btn-block"
+              >
+                <span>Open Sample Venue in Google Maps</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+              <button
+                type="button"
+                className="btn btn-secondary btn-block"
+                onClick={() => setShowMapModal(false)}
+              >
+                Close
+              </button>
+            </div>
           </div>
         </div>
       )}
