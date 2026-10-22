@@ -1769,31 +1769,19 @@ a:hover {
   flex-direction: column;
 }
 
-.phone-browser-bar {
-  background-color: #F3F1EC;
-  padding: 18px 12px 6px;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.68rem;
-  color: var(--muted-taupe);
-  border-bottom: 1px solid var(--border-line);
-}
-
-.browser-url {
-  font-family: monospace;
-}
-
 .phone-artwork-wrap {
   position: relative;
   flex: 1;
   overflow: hidden;
+  width: 100%;
 }
 
 .phone-artwork-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
+  display: block;
 }
 
 .phone-sheen {
@@ -1804,19 +1792,33 @@ a:hover {
 }
 
 .phone-guest-bar {
-  background-color: rgba(255, 253, 248, 0.94);
+  background-color: rgba(255, 253, 248, 0.95);
   backdrop-filter: blur(8px);
-  padding: 8px 12px;
+  -webkit-backdrop-filter: blur(8px);
+  padding: 8px 12px 12px;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   border-top: 1px solid var(--border-line);
+  position: relative;
+  z-index: 10;
 }
 
 .guest-bar-btn {
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   font-weight: 600;
   color: var(--deep-gold);
   text-transform: uppercase;
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+  letter-spacing: 0.04em;
+}
+
+.guest-bar-btn:hover {
+  color: var(--royal-burgundy, #6E2D38);
+  background-color: rgba(167, 135, 78, 0.12);
 }
 
 .phone-home-indicator {
@@ -2008,6 +2010,7 @@ a:hover {
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
+  object-position: top center;
   border-radius: var(--radius-xs);
   border: 1px solid var(--border-line);
 }
@@ -2036,23 +2039,38 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
+  width: 100%;
+  margin-top: 1.5rem;
 }
 
-@media (min-width: 600px) {
-  .studio-actions-group {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  .studio-choose-btn {
-    flex: 1 1 260px;
-    min-width: 0;
-    text-align: center;
-  }
-  .studio-demo-btn {
-    flex: 1 1 190px;
-    min-width: 0;
-    text-align: center;
-  }
+.studio-choose-btn {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.95rem 1.6rem;
+  min-height: 52px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.35;
+}
+
+.studio-demo-btn {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1.6rem;
+  min-height: 48px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.35;
 }
 
 /* ==========================================================================

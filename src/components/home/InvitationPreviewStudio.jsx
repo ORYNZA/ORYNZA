@@ -51,29 +51,41 @@ export default function InvitationPreviewStudio({ activeDesignId, onSelectDesign
 
               {/* Phone Screen Viewport */}
               <div className="phone-screen" key={currentDesign.id}>
-                {/* Simulated Web Address Bar */}
-                <div className="phone-browser-bar" aria-hidden="true">
-                  <span className="browser-lock">🔒</span>
-                  <span className="browser-url">orynza.com/invite/{currentDesign.id}</span>
-                </div>
-
                 {/* Mockup Artwork Presentation */}
                 <div className="phone-artwork-wrap">
                   <img
                     src={currentDesign.image}
                     alt={currentDesign.alt}
                     className="phone-artwork-img"
-                    loading="lazy"
+                    loading="eager"
                   />
                   {/* Subtle stationery shadow overlay */}
                   <div className="phone-sheen" aria-hidden="true"></div>
                 </div>
 
                 {/* Simulated Floating Guest Action Bar */}
-                <div className="phone-guest-bar" aria-hidden="true">
-                  <span className="guest-bar-btn">RSVP</span>
-                  <span className="guest-bar-btn">Directions</span>
-                  <span className="guest-bar-btn">Schedule</span>
+                <div className="phone-guest-bar" aria-label="Simulated invitation actions">
+                  <Link
+                    to={`/invite/${currentDesign.demoSlug || 'demo-wedding'}#rsvp`}
+                    className="guest-bar-btn"
+                    title="View sample RSVP"
+                  >
+                    RSVP
+                  </Link>
+                  <Link
+                    to={`/invite/${currentDesign.demoSlug || 'demo-wedding'}#venue`}
+                    className="guest-bar-btn"
+                    title="View sample venue & directions"
+                  >
+                    Directions
+                  </Link>
+                  <Link
+                    to={`/invite/${currentDesign.demoSlug || 'demo-wedding'}#itinerary`}
+                    className="guest-bar-btn"
+                    title="View sample schedule"
+                  >
+                    Schedule
+                  </Link>
                 </div>
               </div>
 
@@ -157,7 +169,7 @@ export default function InvitationPreviewStudio({ activeDesignId, onSelectDesign
                       onClick={() => setCurrentIndex(idx)}
                       title={d.name}
                     >
-                      <img src={d.image} alt={d.name} className="studio-thumb-img" />
+                      <img src={d.image} alt={d.name} className="studio-thumb-img" loading="eager" />
                       <span className="studio-thumb-label">{d.name.split(' ')[0]}</span>
                     </button>
                   ))}
