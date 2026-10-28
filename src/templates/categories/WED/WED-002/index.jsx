@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   Calendar,
   Clock,
@@ -17,7 +17,6 @@ import {
   Send,
   ExternalLink,
   ChevronRight,
-  Music,
   Menu,
 } from 'lucide-react';
 
@@ -119,7 +118,6 @@ export default function SunsetShoresTemplate() {
           audioCtxRef.current.resume();
         }
 
-        // Create pink/brown noise filter for ocean surf
         const bufferSize = audioCtxRef.current.sampleRate * 2;
         const noiseBuffer = audioCtxRef.current.createBuffer(1, bufferSize, audioCtxRef.current.sampleRate);
         const output = noiseBuffer.getChannelData(0);
@@ -144,9 +142,8 @@ export default function SunsetShoresTemplate() {
         gainNode.gain.setValueAtTime(0.01, audioCtxRef.current.currentTime);
         gainNode.gain.exponentialRampToValueAtTime(0.18, audioCtxRef.current.currentTime + 2);
 
-        // LFO for surf wave rhythm
         const lfo = audioCtxRef.current.createOscillator();
-        lfo.frequency.value = 0.12; // 8-second wave swells
+        lfo.frequency.value = 0.12;
         const lfoGain = audioCtxRef.current.createGain();
         lfoGain.gain.value = 250;
         lfo.connect(filter.frequency);
@@ -292,11 +289,11 @@ export default function SunsetShoresTemplate() {
               src={logoImage}
               alt="ORYNZA Atelier"
               className="ss-logo-img"
-              width="114"
-              height="38"
+              width="106"
+              height="34"
             />
             <span className="ss-logo-divider" aria-hidden="true" />
-            <span className="ss-logo-text">{config.couple.monogram}</span>
+            <span className="ss-logo-monogram">{config.couple.monogram}</span>
           </a>
 
           {/* Navigation Links */}
@@ -317,7 +314,7 @@ export default function SunsetShoresTemplate() {
                   className={`ss-nav-link ${activeSection === 'celebrations' ? 'active' : ''}`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Celebrations
+                  Itinerary
                 </a>
               </li>
               <li>
@@ -335,7 +332,7 @@ export default function SunsetShoresTemplate() {
                   className={`ss-nav-link ${activeSection === 'rsvp' ? 'active' : ''}`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Kindly Respond
+                  RSVP
                 </a>
               </li>
             </ul>
@@ -379,151 +376,150 @@ export default function SunsetShoresTemplate() {
       {/* Main Content Area */}
       <main id="main-invitation" role="main">
         {/* =================================================================
-            SECTION A — A Love Story by the Sea (Hero)
+            SECTION A — Editorial Split-Screen Hero
             ================================================================= */}
-        <section id="hero" className="ss-hero" aria-label="Wedding Invitation Header">
-          <div className="ss-hero-bg-container" aria-hidden="true">
-            <img
-              src={heroImage}
-              alt="Panoramic tropical sunset over the Arabian Sea in Goa"
-              className="ss-hero-bg-img"
-              loading="eager"
-            />
-            <div className="ss-hero-gradient-overlay" />
-            <img
-              src={frameImage}
-              alt=""
-              className="ss-hero-floral-frame"
-              aria-hidden="true"
-            />
-          </div>
-
+        <section id="hero" className="ss-hero" aria-label="Wedding Invitation Opening">
           <div className="ss-container">
-            <div className="ss-hero-content">
-              <span className="ss-hero-badge">
-                <Sun size={14} aria-hidden="true" />
-                <span>Coastal Destination Wedding</span>
-                <Waves size={14} aria-hidden="true" />
-              </span>
+            <div className="ss-hero-split-grid">
+              {/* Left Column: Typographic Masthead */}
+              <div className="ss-hero-text-col">
+                <div className="ss-hero-kicker-row">
+                  <span className="ss-hero-badge">
+                    <Sun size={14} aria-hidden="true" />
+                    <span>Coastal Destination Suite • Goa</span>
+                  </span>
+                </div>
 
-              <p className="ss-hero-parents">{config.couple.parentsWording}</p>
+                <p className="ss-hero-parents">{config.couple.parentsWording}</p>
 
-              <h1 className="ss-hero-names">
-                {config.couple.partnerA}
-                <span className="ss-amp">&amp;</span>
-                {config.couple.partnerB}
-              </h1>
+                <h1 className="ss-hero-title-names">
+                  {config.couple.partnerA}
+                  <span className="ss-amp">&amp;</span>
+                  {config.couple.partnerB}
+                </h1>
 
-              <div className="ss-divider-flourish" aria-hidden="true">
-                <span className="ss-flourish-line" />
-                <Sparkles size={16} />
-                <span className="ss-flourish-line" />
-              </div>
+                <p className="ss-hero-tagline">{config.event.tagline}</p>
 
-              <p className="ss-hero-subtitle">
-                {config.couple.invitationCopy}
-              </p>
+                <p className="ss-hero-copy">
+                  {config.couple.invitationCopy}
+                </p>
 
-              {/* Meta Pill */}
-              <div className="ss-hero-meta-pill">
-                <span className="ss-meta-item">
-                  <Calendar size={16} className="ss-meta-icon" aria-hidden="true" />
-                  <span>{config.event.dateDisplay}</span>
-                </span>
-                <span className="ss-meta-dot" aria-hidden="true">✦</span>
-                <span className="ss-meta-item">
-                  <MapPin size={16} className="ss-meta-icon" aria-hidden="true" />
-                  <span>{config.venue.name}</span>
-                </span>
-                <span className="ss-meta-dot" aria-hidden="true">✦</span>
-                <span className="ss-meta-item">
-                  <Compass size={16} className="ss-meta-icon" aria-hidden="true" />
-                  <span>{config.event.destination}</span>
-                </span>
-              </div>
+                {/* Meta Bar */}
+                <div className="ss-hero-meta-bar">
+                  <span className="ss-meta-chip">
+                    <Calendar size={15} className="ss-chip-icon" aria-hidden="true" />
+                    <span>{config.event.dateDisplay}</span>
+                  </span>
+                  <span className="ss-meta-chip">
+                    <MapPin size={15} className="ss-chip-icon" aria-hidden="true" />
+                    <span>{config.venue.name}</span>
+                  </span>
+                  <span className="ss-meta-chip">
+                    <Compass size={15} className="ss-chip-icon" aria-hidden="true" />
+                    <span>{config.event.destination}</span>
+                  </span>
+                </div>
 
-              {/* Live Countdown Clock */}
-              <div className="ss-countdown-box" aria-label="Celebration Countdown Timer">
-                <span className="ss-countdown-label">Counting Down to the Sunset Vows</span>
-                <div className="ss-countdown-grid">
-                  <div className="ss-countdown-unit">
-                    <span className="ss-countdown-num">{timeLeft.days}</span>
-                    <span className="ss-countdown-sub">Days</span>
+                {/* Countdown Tile */}
+                <div className="ss-countdown-strip" aria-label="Wedding Countdown">
+                  <span className="ss-countdown-eyebrow">Countdown to the Sunset Vows</span>
+                  <div className="ss-countdown-grid">
+                    <div className="ss-countdown-tile">
+                      <span className="ss-countdown-digit">{timeLeft.days}</span>
+                      <span className="ss-countdown-unit">Days</span>
+                    </div>
+                    <div className="ss-countdown-tile">
+                      <span className="ss-countdown-digit">{timeLeft.hours}</span>
+                      <span className="ss-countdown-unit">Hours</span>
+                    </div>
+                    <div className="ss-countdown-tile">
+                      <span className="ss-countdown-digit">{timeLeft.minutes}</span>
+                      <span className="ss-countdown-unit">Mins</span>
+                    </div>
+                    <div className="ss-countdown-tile">
+                      <span className="ss-countdown-digit">{timeLeft.seconds}</span>
+                      <span className="ss-countdown-unit">Secs</span>
+                    </div>
                   </div>
-                  <div className="ss-countdown-unit">
-                    <span className="ss-countdown-num">{timeLeft.hours}</span>
-                    <span className="ss-countdown-sub">Hours</span>
-                  </div>
-                  <div className="ss-countdown-unit">
-                    <span className="ss-countdown-num">{timeLeft.minutes}</span>
-                    <span className="ss-countdown-sub">Mins</span>
-                  </div>
-                  <div className="ss-countdown-unit">
-                    <span className="ss-countdown-num">{timeLeft.seconds}</span>
-                    <span className="ss-countdown-sub">Secs</span>
-                  </div>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="ss-hero-actions">
+                  <a href="#celebrations" className="ss-btn ss-btn-primary">
+                    <span>Explore Itinerary</span>
+                    <ChevronRight size={16} aria-hidden="true" />
+                  </a>
+                  <button
+                    type="button"
+                    className="ss-btn ss-btn-secondary"
+                    onClick={handleDownloadCalendar}
+                  >
+                    <Download size={16} aria-hidden="true" />
+                    <span>Save Date (.ics)</span>
+                  </button>
+                  <a href="#rsvp" className="ss-btn ss-btn-terracotta">
+                    <span>Kindly Respond</span>
+                  </a>
                 </div>
               </div>
 
-              {/* Action Buttons */}
-              <div className="ss-btn-group">
-                <a href="#celebrations" className="ss-btn ss-btn-primary">
-                  <span>Explore Celebrations</span>
-                  <ChevronRight size={16} aria-hidden="true" />
-                </a>
-                <button
-                  type="button"
-                  className="ss-btn ss-btn-secondary"
-                  onClick={handleDownloadCalendar}
-                >
-                  <Download size={16} aria-hidden="true" />
-                  <span>Add to Calendar (.ics)</span>
-                </button>
-                <a href="#rsvp" className="ss-btn ss-btn-gold">
-                  <span>Kindly Respond</span>
-                </a>
+              {/* Right Column: Sculptural Arched Visual */}
+              <div className="ss-hero-visual-col">
+                <div className="ss-sculptural-arch">
+                  <img
+                    src={heroImage}
+                    alt="Panoramic coastal sunset over the Arabian Sea in Goa"
+                    className="ss-hero-visual-img"
+                    loading="eager"
+                  />
+                  <div className="ss-floating-seal" aria-hidden="true">
+                    {config.couple.monogram}
+                  </div>
+                  <div className="ss-floating-resort-pill">
+                    <span className="ss-resort-pill-title">{config.venue.name}</span>
+                    <span className="ss-resort-pill-loc">Benaulim Beach • South Goa</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* =================================================================
-            SECTION B — Two Souls, One Beautiful Journey (Our Story & Welcome)
+            SECTION B — Magazine Editorial Story Spread
             ================================================================= */}
-        <section id="story" className="ss-section ss-story-section" aria-label="Couple Story and Introduction">
+        <section id="story" className="ss-section ss-story-section" aria-label="The Couple Story">
           <div className="ss-container">
-            <div className="ss-story-grid">
-              {/* Couple Portrait Frame */}
-              <div className="ss-portrait-wrapper">
-                <div className="ss-portrait-frame">
-                  <img
-                    src={portraitImage}
-                    alt={`${config.couple.partnerA} and ${config.couple.partnerB} smiling together on the coastal shores of Goa`}
-                    className="ss-portrait-img"
-                    loading="lazy"
-                  />
-                  <div className="ss-portrait-badge">
-                    <span>{config.couple.partnerA} &amp; {config.couple.partnerB} • Goa</span>
-                  </div>
+            <div className="ss-magazine-grid">
+              {/* Offset Polaroid Portrait */}
+              <div className="ss-portrait-polaroid-wrap">
+                <img
+                  src={portraitImage}
+                  alt={`${config.couple.partnerA} and ${config.couple.partnerB} on the shores of Goa`}
+                  className="ss-portrait-polaroid-img"
+                  loading="lazy"
+                />
+                <div className="ss-polaroid-caption">
+                  {config.couple.partnerA} &amp; {config.couple.partnerB}
                 </div>
               </div>
 
-              {/* Narrative Content */}
-              <div className="ss-story-content">
-                <span className="ss-section-eyebrow">{config.intro.eyebrow}</span>
-                <h2 className="ss-section-title">{config.intro.title}</h2>
-                <blockquote className="ss-story-quote">
+              {/* Story Narrative */}
+              <div>
+                <span className="ss-story-lead-kicker">{config.intro.eyebrow}</span>
+                <h2 className="ss-story-heading">{config.intro.title}</h2>
+                <blockquote className="ss-editorial-quote">
                   {config.intro.quote}
                 </blockquote>
-                <p className="ss-story-p">{config.intro.paragraph1}</p>
-                <p className="ss-story-p">{config.intro.paragraph2}</p>
+                <p className="ss-story-paragraph">{config.intro.paragraph1}</p>
+                <p className="ss-story-paragraph">{config.intro.paragraph2}</p>
 
-                <div className="ss-story-signoff">
-                  <span className="ss-signoff-monogram" aria-hidden="true">
+                <div className="ss-story-family-badge">
+                  <span className="ss-family-monogram" aria-hidden="true">
                     {config.couple.monogram}
                   </span>
                   <div>
-                    <span className="ss-signoff-text">
+                    <span className="ss-family-text">
                       {config.couple.partnerAFull} &amp; {config.couple.partnerBFull}
                     </span>
                   </div>
@@ -534,29 +530,27 @@ export default function SunsetShoresTemplate() {
         </section>
 
         {/* =================================================================
-            SECTION C — Celebrations by the Sea (4 Events Grid)
+            SECTION C — Alternating Coastal Event Chapters
             ================================================================= */}
-        <section id="celebrations" className="ss-section ss-events-section" aria-label="Wedding Celebrations Schedule">
+        <section id="celebrations" className="ss-section" aria-label="Celebrations Schedule">
           <div className="ss-container">
-            <div className="ss-section-header">
-              <span className="ss-section-eyebrow">Itinerary</span>
-              <h2 className="ss-section-title">Celebrations by the Sea</h2>
-              <div className="ss-divider-flourish" aria-hidden="true">
-                <span className="ss-flourish-line" />
-                <Sparkles size={16} />
-                <span className="ss-flourish-line" />
-              </div>
-              <p className="ss-section-lead">
-                Four curated gatherings honoring coastal sunsets, celebratory music, sacred Vedic vows, and joyful starlit feasts.
+            <div className="ss-itinerary-header">
+              <span className="ss-itinerary-eyebrow">The Gathering</span>
+              <h2 className="ss-itinerary-title">Celebrations by the Sea</h2>
+              <p className="ss-itinerary-lead">
+                Four curated chapters honoring tropical sunshine, coastal music, sacred vows, and starlit banquets.
               </p>
             </div>
 
-            {/* 4 Cards Grid with Independent Panel Crop */}
-            <div className="ss-events-grid">
-              {config.celebrations.map((event) => (
-                <article key={event.id} className="ss-event-card">
-                  {/* Independent Crop via CSS data-panel */}
-                  <div className="ss-panel-crop-wrapper" data-panel={event.panelIndex}>
+            {/* Alternating Event Chapters */}
+            <div className="ss-chapters-stack">
+              {config.celebrations.map((event, idx) => (
+                <article
+                  key={event.id}
+                  className={`ss-chapter-card ${idx % 2 === 1 ? 'reverse' : ''}`}
+                >
+                  {/* Cropped Panel Visual */}
+                  <div className="ss-chapter-visual" data-panel={event.panelIndex}>
                     <img
                       src={panelsImage}
                       alt={event.panelAlt}
@@ -564,28 +558,33 @@ export default function SunsetShoresTemplate() {
                     />
                   </div>
 
-                  <div className="ss-event-card-body">
-                    <span className="ss-event-number-tag">Event 0{event.panelIndex + 1}</span>
-                    <h3 className="ss-event-title">{event.title}</h3>
+                  {/* Editorial Details */}
+                  <div className="ss-chapter-body">
+                    <span className="ss-chapter-num-badge">
+                      <Sun size={14} aria-hidden="true" />
+                      <span>Chapter 0{event.panelIndex + 1}</span>
+                    </span>
 
-                    <ul className="ss-event-meta-list">
-                      <li className="ss-event-meta-item">
-                        <Calendar size={14} className="ss-event-meta-icon" aria-hidden="true" />
+                    <h3 className="ss-chapter-title">{event.title}</h3>
+
+                    <div className="ss-chapter-meta-row">
+                      <span className="ss-chapter-meta-item">
+                        <Calendar size={15} style={{ color: 'var(--ss-terracotta)' }} aria-hidden="true" />
                         <span>{event.date}</span>
-                      </li>
-                      <li className="ss-event-meta-item">
-                        <Clock size={14} className="ss-event-meta-icon" aria-hidden="true" />
+                      </span>
+                      <span className="ss-chapter-meta-item">
+                        <Clock size={15} style={{ color: 'var(--ss-terracotta)' }} aria-hidden="true" />
                         <span>{event.timeDisplay}</span>
-                      </li>
-                      <li className="ss-event-meta-item">
-                        <MapPin size={14} className="ss-event-meta-icon" aria-hidden="true" />
+                      </span>
+                      <span className="ss-chapter-meta-item">
+                        <MapPin size={15} style={{ color: 'var(--ss-terracotta)' }} aria-hidden="true" />
                         <span>{event.venue}</span>
-                      </li>
-                    </ul>
+                      </span>
+                    </div>
 
-                    <p className="ss-event-desc">{event.description}</p>
+                    <p className="ss-chapter-desc">{event.description}</p>
 
-                    <div className="ss-event-dresscode">
+                    <div className="ss-chapter-attire-pill">
                       <span><strong>Attire:</strong> {event.dressCode}</span>
                     </div>
                   </div>
@@ -593,9 +592,9 @@ export default function SunsetShoresTemplate() {
               ))}
             </div>
 
-            {/* Mandap Feature Spotlight */}
-            <div className="ss-mandap-spotlight">
-              <div className="ss-mandap-visual-box">
+            {/* Mandap Feature Banner */}
+            <div className="ss-mandap-banner">
+              <div className="ss-mandap-img-wrap">
                 <img
                   src={mandapImage}
                   alt={config.ceremonyMandap.alt}
@@ -604,11 +603,11 @@ export default function SunsetShoresTemplate() {
                 />
               </div>
               <div className="ss-mandap-content">
-                <span className="ss-section-eyebrow">{config.ceremonyMandap.eyebrow}</span>
+                <span className="ss-itinerary-eyebrow">{config.ceremonyMandap.eyebrow}</span>
                 <h3>{config.ceremonyMandap.title}</h3>
                 <p>{config.ceremonyMandap.description}</p>
                 <a href="#rsvp" className="ss-btn ss-btn-primary">
-                  <span>Join Our Sacred Sunset</span>
+                  <span>RSVP for Sunset Vows</span>
                   <ChevronRight size={16} aria-hidden="true" />
                 </a>
               </div>
@@ -617,46 +616,38 @@ export default function SunsetShoresTemplate() {
         </section>
 
         {/* =================================================================
-            SECTION D — Our Venue (Taj Exotica Resort & Spa, Goa)
+            SECTION D — The Resort & Travel Guide
             ================================================================= */}
-        <section id="venue" className="ss-section ss-venue-section" aria-label="Wedding Venue and Guest Guidance">
+        <section id="venue" className="ss-section" aria-label="Venue Information">
           <div className="ss-container">
-            <div className="ss-section-header">
-              <span className="ss-section-eyebrow">The Destination</span>
-              <h2 className="ss-section-title">Taj Exotica Resort &amp; Spa, Goa</h2>
-              <div className="ss-divider-flourish" aria-hidden="true">
-                <span className="ss-flourish-line" />
-                <Sparkles size={16} />
-                <span className="ss-flourish-line" />
-              </div>
-              <p className="ss-section-lead">
-                An idyllic sanctuary on the southwest coast of Goa, where Mediterranean architecture meets the serene sands of Benaulim Beach.
+            <div className="ss-itinerary-header">
+              <span className="ss-itinerary-eyebrow">The Resort</span>
+              <h2 className="ss-itinerary-title">{config.venue.name}</h2>
+              <p className="ss-itinerary-lead">
+                A serene Mediterranean-style coastal sanctuary tucked along the silver sands of Benaulim Beach in South Goa.
               </p>
             </div>
 
-            {/* Main Venue Presentation Card */}
-            <div className="ss-venue-box">
-              <div className="ss-venue-img-wrap">
+            {/* Main Resort Presentation */}
+            <div className="ss-resort-banner">
+              <div className="ss-resort-visual-side">
                 <img
                   src={venueImage}
                   alt={config.venue.alt}
-                  className="ss-venue-img"
+                  className="ss-resort-visual-img"
                   loading="lazy"
                 />
-                <span className="ss-venue-badge">Demonstration Venue</span>
               </div>
+              <div className="ss-resort-info-side">
+                <span className="ss-resort-subheading">{config.venue.palaceSubtitle}</span>
+                <h3 className="ss-resort-heading">{config.venue.name}</h3>
+                <p className="ss-resort-desc">{config.venue.description}</p>
+                <p style={{ fontSize: '14px', color: 'var(--ss-text-muted)', marginBottom: '24px' }}>
+                  <MapPin size={16} style={{ color: 'var(--ss-terracotta)', display: 'inline', verticalAlign: 'text-bottom', marginRight: '6px' }} />
+                  {config.venue.address}
+                </p>
 
-              <div className="ss-venue-info">
-                <h3 className="ss-venue-name">{config.venue.name}</h3>
-                <span className="ss-venue-subtitle">{config.venue.palaceSubtitle}</span>
-                <p className="ss-venue-desc">{config.venue.description}</p>
-
-                <div className="ss-venue-address">
-                  <MapPin size={18} className="ss-meta-icon" aria-hidden="true" />
-                  <span>{config.venue.address}</span>
-                </div>
-
-                <div className="ss-btn-group" style={{ justifyContent: 'flex-start' }}>
+                <div>
                   <a
                     href={config.venue.directionsUrl}
                     target="_blank"
@@ -670,59 +661,53 @@ export default function SunsetShoresTemplate() {
               </div>
             </div>
 
-            {/* Guest Guidance Grid */}
-            <div className="ss-travel-grid">
-              <div className="ss-travel-card">
-                <span className="ss-travel-icon" aria-hidden="true">✈️</span>
-                <h4 className="ss-travel-title">{config.guestGuidance.airport.title}</h4>
-                <p className="ss-travel-desc">{config.guestGuidance.airport.detail}</p>
+            {/* Travel Tiles */}
+            <div className="ss-travel-cards-row">
+              <div className="ss-travel-tile">
+                <span className="ss-travel-tile-icon" aria-hidden="true">✈️</span>
+                <h4 className="ss-travel-tile-title">{config.guestGuidance.airport.title}</h4>
+                <p className="ss-travel-tile-desc">{config.guestGuidance.airport.detail}</p>
               </div>
 
-              <div className="ss-travel-card">
-                <span className="ss-travel-icon" aria-hidden="true">🏨</span>
-                <h4 className="ss-travel-title">{config.guestGuidance.accommodation.title}</h4>
-                <p className="ss-travel-desc">{config.guestGuidance.accommodation.detail}</p>
+              <div className="ss-travel-tile">
+                <span className="ss-travel-tile-icon" aria-hidden="true">🏨</span>
+                <h4 className="ss-travel-tile-title">{config.guestGuidance.accommodation.title}</h4>
+                <p className="ss-travel-tile-desc">{config.guestGuidance.accommodation.detail}</p>
               </div>
 
-              <div className="ss-travel-card">
-                <span className="ss-travel-icon" aria-hidden="true">🌴</span>
-                <h4 className="ss-travel-title">{config.guestGuidance.climate.title}</h4>
-                <p className="ss-travel-desc">{config.guestGuidance.climate.detail}</p>
+              <div className="ss-travel-tile">
+                <span className="ss-travel-tile-icon" aria-hidden="true">🌴</span>
+                <h4 className="ss-travel-tile-title">{config.guestGuidance.climate.title}</h4>
+                <p className="ss-travel-tile-desc">{config.guestGuidance.climate.detail}</p>
               </div>
             </div>
           </div>
         </section>
 
         {/* =================================================================
-            SECTION E — Kindly Respond (RSVP)
+            SECTION E — Modern Minimalist RSVP
             ================================================================= */}
-        <section id="rsvp" className="ss-section ss-rsvp-section" aria-label="RSVP and Guest Attendance">
+        <section id="rsvp" className="ss-section ss-rsvp-section" aria-label="Guest RSVP Form">
           <div className="ss-container">
-            <div className="ss-section-header">
-              <span className="ss-section-eyebrow">Response</span>
-              <h2 className="ss-section-title">Kindly Respond</h2>
-              <div className="ss-divider-flourish" aria-hidden="true">
-                <span className="ss-flourish-line" />
-                <Sparkles size={16} />
-                <span className="ss-flourish-line" />
-              </div>
-              <p className="ss-section-lead">
-                Please let us know if you can join our seaside celebration by{' '}
-                <strong>{config.rsvp.deadlineDisplay}</strong>.
+            <div className="ss-itinerary-header">
+              <span className="ss-itinerary-eyebrow">Response</span>
+              <h2 className="ss-itinerary-title">Kindly Respond</h2>
+              <p className="ss-itinerary-lead">
+                Please confirm your attendance by <strong>{config.rsvp.deadlineDisplay}</strong> so we can ensure your stay is seamless.
               </p>
             </div>
 
-            <div className="ss-rsvp-card">
+            <div className="ss-rsvp-editorial-card">
               <form onSubmit={handleRsvpSubmit} noValidate>
                 <div className="ss-form-grid">
-                  {/* Attendance Choice */}
+                  {/* Attendance Radio Pills */}
                   <div className="ss-form-group ss-form-full">
                     <label className="ss-form-label">
-                      Will you be joining us in Goa? <span className="required">*</span>
+                      Will you be joining our celebration in Goa? <span className="required">*</span>
                     </label>
-                    <div className="ss-radio-group">
+                    <div className="ss-radio-pills">
                       <label
-                        className={`ss-radio-pill ${rsvpData.attendance === 'joyfully-accepts' ? 'selected' : ''}`}
+                        className={`ss-radio-box ${rsvpData.attendance === 'joyfully-accepts' ? 'selected' : ''}`}
                       >
                         <input
                           type="radio"
@@ -734,7 +719,7 @@ export default function SunsetShoresTemplate() {
                         <span>Joyfully Accepts</span>
                       </label>
                       <label
-                        className={`ss-radio-pill ${rsvpData.attendance === 'regretfully-declines' ? 'selected' : ''}`}
+                        className={`ss-radio-box ${rsvpData.attendance === 'regretfully-declines' ? 'selected' : ''}`}
                       >
                         <input
                           type="radio"
@@ -748,7 +733,7 @@ export default function SunsetShoresTemplate() {
                     </div>
                   </div>
 
-                  {/* Guest Full Name */}
+                  {/* Full Name */}
                   <div className="ss-form-group">
                     <label htmlFor="ss-guest-name" className="ss-form-label">
                       Your Full Name <span className="required">*</span>
@@ -763,16 +748,14 @@ export default function SunsetShoresTemplate() {
                       aria-required="true"
                     />
                     {rsvpErrors.name && (
-                      <span className="ss-error-msg" role="alert">
-                        {rsvpErrors.name}
-                      </span>
+                      <span className="ss-error-msg" role="alert">{rsvpErrors.name}</span>
                     )}
                   </div>
 
-                  {/* Contact Phone */}
+                  {/* Phone */}
                   <div className="ss-form-group">
                     <label htmlFor="ss-guest-phone" className="ss-form-label">
-                      Contact WhatsApp / Phone
+                      WhatsApp / Mobile Contact
                     </label>
                     <input
                       id="ss-guest-phone"
@@ -784,10 +767,10 @@ export default function SunsetShoresTemplate() {
                     />
                   </div>
 
-                  {/* Number of Guests */}
+                  {/* Guest Count */}
                   <div className="ss-form-group">
                     <label htmlFor="ss-guest-count" className="ss-form-label">
-                      Number of Guests Attending
+                      Number of Guests
                     </label>
                     <select
                       id="ss-guest-count"
@@ -802,7 +785,7 @@ export default function SunsetShoresTemplate() {
                     </select>
                   </div>
 
-                  {/* Dietary Requirements */}
+                  {/* Dietary */}
                   <div className="ss-form-group">
                     <label htmlFor="ss-dietary" className="ss-form-label">
                       Dietary Preferences
@@ -824,9 +807,9 @@ export default function SunsetShoresTemplate() {
                   {/* Events Attending Checkboxes */}
                   <div className="ss-form-group ss-form-full">
                     <label className="ss-form-label">Events You Will Attend</label>
-                    <div className="ss-checkbox-group">
+                    <div className="ss-checkbox-grid">
                       {config.celebrations.map((ev) => (
-                        <label key={ev.id} className="ss-checkbox-label">
+                        <label key={ev.id} className="ss-checkbox-item">
                           <input
                             type="checkbox"
                             checked={rsvpData.events.includes(ev.id)}
@@ -838,10 +821,10 @@ export default function SunsetShoresTemplate() {
                     </div>
                   </div>
 
-                  {/* Blessings & Personal Message */}
+                  {/* Blessings */}
                   <div className="ss-form-group ss-form-full">
                     <label htmlFor="ss-message" className="ss-form-label">
-                      Warm Wishes &amp; Blessings for the Couple
+                      Warm Wishes &amp; Blessings
                     </label>
                     <textarea
                       id="ss-message"
@@ -854,30 +837,28 @@ export default function SunsetShoresTemplate() {
                   </div>
 
                   {/* Submit Button */}
-                  <div className="ss-form-group ss-form-full" style={{ marginTop: '12px' }}>
+                  <div className="ss-form-group ss-form-full">
                     <button type="submit" className="ss-btn ss-btn-primary" style={{ width: '100%' }}>
                       <Send size={16} aria-hidden="true" />
-                      <span>Submit Your RSVP Response</span>
+                      <span>Submit RSVP Response</span>
                     </button>
-                    <p className="ss-rsvp-deadline-note">
-                      Kindly confirm by {config.rsvp.deadlineDisplay}. For questions, contact{' '}
-                      <strong>{config.rsvp.contactPhone}</strong> or email{' '}
-                      <strong>{config.rsvp.contactEmail}</strong>.
+                    <p style={{ textAlign: 'center', fontSize: '13px', color: 'var(--ss-text-muted)', marginTop: '14px' }}>
+                      Questions? Reach our concierge at <strong>{config.rsvp.contactPhone}</strong> or <strong>{config.rsvp.contactEmail}</strong>.
                     </p>
                   </div>
                 </div>
               </form>
 
-              {/* Submission Feedback Confirmation */}
+              {/* Confirmation Banner */}
               {rsvpSubmitted && (
-                <div className="ss-rsvp-success-banner" role="status">
+                <div className="ss-rsvp-success" role="status">
                   <p>
-                    ✓ <strong>Thank you, {rsvpData.name}!</strong> Your response has been recorded.
+                    ✓ <strong>Thank you, {rsvpData.name}!</strong> Your RSVP has been confirmed.
                   </p>
                   <p style={{ fontSize: '13px', marginTop: '6px' }}>
                     {rsvpData.attendance === 'joyfully-accepts'
-                      ? 'We are delighted to celebrate with you on the golden shores of Goa!'
-                      : 'We will miss your presence by the sea and treasure your warm blessings.'}
+                      ? 'We look forward to welcoming you to the sunlit shores of Goa!'
+                      : 'We will miss your company and warmly appreciate your blessings.'}
                   </p>
                   <p style={{ fontSize: '11px', marginTop: '6px', opacity: 0.8 }}>
                     (Demonstration RSVP: No server credentials required; formatted for local and preview testing.)
@@ -889,62 +870,63 @@ export default function SunsetShoresTemplate() {
         </section>
 
         {/* =================================================================
-            SECTION F — With Love and Gratitude (Closing)
+            SECTION F — Letterpress Beach Finale
             ================================================================= */}
-        <section className="ss-closing-section" aria-label="Closing Gratitude and Blessings">
-          <div className="ss-closing-bg-container" aria-hidden="true">
+        <section className="ss-closing-hero" aria-label="Closing Farewell">
+          <div className="ss-closing-bg-box" aria-hidden="true">
             <img
               src={finaleImage}
-              alt="Golden evening sunset waves gently washing over Goa beach sands"
+              alt="Golden evening sunset waves washing over Goa beach sands"
               className="ss-closing-bg-img"
               loading="lazy"
             />
-            <div className="ss-closing-overlay" />
+            <div className="ss-closing-gradient" />
           </div>
 
-          <div className="ss-closing-content">
-            <h2 className="ss-closing-title">{config.closing.gratitudeTitle}</h2>
-            <p className="ss-closing-message">{config.closing.gratitudeMessage}</p>
-            <div className="ss-closing-couple">
+          <div className="ss-closing-inner">
+            <span className="ss-closing-eyebrow">With Gratitude</span>
+            <h2 className="ss-closing-heading">{config.closing.gratitudeTitle}</h2>
+            <p className="ss-closing-text">{config.closing.gratitudeMessage}</p>
+            <div className="ss-closing-names">
               {config.couple.partnerA} &amp; {config.couple.partnerB}
             </div>
             <div className="ss-closing-date">{config.event.dateDisplay}</div>
-            <p className="ss-closing-signoff">{config.closing.familySignoff}</p>
+            <p style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.75)', fontStyle: 'italic' }}>
+              {config.closing.familySignoff}
+            </p>
           </div>
         </section>
       </main>
 
-      {/* Floating Guest Quick-Action Bar */}
-      <aside className="ss-floating-bar" aria-label="Quick invitation actions">
-        <a href="#celebrations" className="ss-floating-link" title="View event schedule">
+      {/* Floating Bottom Dock */}
+      <aside className="ss-floating-dock" aria-label="Quick actions">
+        <a href="#celebrations" className="ss-dock-btn" title="View itinerary">
           <Clock size={16} aria-hidden="true" />
-          <span className="btn-text">Schedule</span>
+          <span className="label">Itinerary</span>
         </a>
-        <a href="#venue" className="ss-floating-link" title="View resort & directions">
+        <a href="#venue" className="ss-dock-btn" title="View resort">
           <MapPin size={16} aria-hidden="true" />
-          <span className="btn-text">Resort</span>
+          <span className="label">Resort</span>
         </a>
         <button
           type="button"
-          className="ss-floating-link"
+          className="ss-dock-btn"
           onClick={handleDownloadCalendar}
-          title="Save wedding date to your calendar"
-          style={{ background: 'none', border: 'none', cursor: 'pointer' }}
+          title="Save date (.ics)"
         >
           <Calendar size={16} aria-hidden="true" />
-          <span className="btn-text">Calendar</span>
+          <span className="label">Calendar</span>
         </button>
         <button
           type="button"
-          className="ss-floating-link"
+          className="ss-dock-btn"
           onClick={() => setShareModalOpen(true)}
-          title="Share this invitation"
-          style={{ background: 'none', border: 'none', cursor: 'pointer' }}
+          title="Share invitation"
         >
           <Share2 size={16} aria-hidden="true" />
-          <span className="btn-text">Share</span>
+          <span className="label">Share</span>
         </button>
-        <a href="#rsvp" className="ss-floating-link ss-floating-cta" title="RSVP now">
+        <a href="#rsvp" className="ss-dock-btn ss-dock-cta" title="RSVP now">
           <Heart size={16} aria-hidden="true" />
           <span>RSVP</span>
         </a>
@@ -956,13 +938,13 @@ export default function SunsetShoresTemplate() {
           <img
             src={logoImage}
             alt="ORYNZA Atelier"
-            className="ss-footer-logo"
-            width="100"
-            height="33"
+            className="ss-footer-brand-logo"
+            width="90"
+            height="30"
           />
           <p>© {new Date().getFullYear()} ORYNZA Digital Wedding Invitation Atelier. All rights reserved.</p>
           <p style={{ opacity: 0.7, marginTop: '4px' }}>
-            Demonstration template: Sunset Shores (WED-002) • Replaceable couple &amp; venue details.
+            Template 2: Sunset Shores (WED-002) • Replaceable couple &amp; venue details.
           </p>
         </div>
       </footer>
@@ -975,19 +957,19 @@ export default function SunsetShoresTemplate() {
           aria-modal="true"
           aria-label="Share Wedding Invitation"
         >
-          <div className="ss-modal-card">
+          <div className="ss-modal-box">
             <button
               type="button"
-              className="ss-modal-close"
+              className="ss-modal-close-btn"
               onClick={() => setShareModalOpen(false)}
               aria-label="Close share dialog"
             >
               <X size={20} />
             </button>
-            <h3 style={{ fontFamily: 'var(--ss-font-serif)', fontSize: '26px', color: 'var(--ss-green)', marginBottom: '8px' }}>
+            <h3 style={{ fontFamily: 'var(--ss-font-serif)', fontSize: '26px', color: 'var(--ss-teal)', marginBottom: '8px' }}>
               Share This Invitation
             </h3>
-            <p style={{ fontSize: '14px', color: 'var(--ss-muted)', marginBottom: '24px' }}>
+            <p style={{ fontSize: '14px', color: 'var(--ss-text-muted)', marginBottom: '24px' }}>
               Invite loved ones to celebrate Arjun &amp; Kiara’s wedding in Goa.
             </p>
 
