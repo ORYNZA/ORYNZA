@@ -70,6 +70,28 @@ This directory serves as the centralized repository for shared, multi-template v
 
 ---
 
+### 4. `garden-botanical-overlay.png`
+- **Relative Path**: `src/templates/common assets/garden-botanical-overlay.png`
+- **Asset Category**: Lush Botanical Foliage Overlay & Framing Accent
+- **Verified Format**: PNG (Portable Network Graphics with indexed palette & transparency)
+- **Verified Dimensions**: 1643 × 957 px
+- **Aspect Ratio**: ~1.717:1
+- **Alpha Transparency**: Yes (8-bit alpha transparency preserved)
+- **Main Colors**:
+  - Sage Green: `#587F5B` / `#7A9A7C`
+  - Deep Garden Forest: `#2E3F2F`
+  - Soft Blush Rose: `#E7C6C8` / `#C65A6A`
+  - Warm Bronze: `#A67C52`
+- **Visual Subject & Style**: Contemporary Indian botanical garden foliage with delicate eucalyptus, ferns, lush leaves, and botanical garden florals.
+- **Intended Usage**: Editorial section backdrop overlays, asymmetric hero visual layering, subtle floating atmosphere accents, and RSVP stationery borders.
+- **Recommended Background & Contrast**: Best layered over light natural garden linen (`#F6EFE7`), soft blush (`#E7C6C8`), or light warm ivory with `opacity: 0.30–0.60`.
+- **Responsive Guidance**: Set with `pointer-events: none` and `aria-hidden="true"`. Scale with `object-fit: cover` or anchor to asymmetrical edge grids.
+- **First Introduced**: `WED-003` (Enchanted Gardens)
+- **Suitability for Reuse**: High (Botanical, Garden, Spring, Outdoor Weddings `WED`, Engagements `ENG`, Receptions).
+- **Source & Provenance**: Custom bespoke ORYNZA invitation botanical asset created for `WED-003`.
+
+---
+
 ## Library Conventions & Guidelines
 
 1. **Format Standards**: Transparent decorative overlays must be genuine 8-bit or 16-bit RGBA PNGs. Opaque scenic photographs should be web-optimized RGB PNG or WebP.
@@ -81,5 +103,6 @@ This directory serves as the centralized repository for shared, multi-template v
 
 ## Change History
 
+- **2026-10-28**: Added reusable botanical foliage overlay `garden-botanical-overlay.png` (1643 × 957 px) for `WED-003` (Enchanted Gardens) with transparency specifications.
 - **2026-10-28**: Added reusable tropical coastal stationery frame `goa-floral-frame.png` (1448 × 1086 px) for `WED-002` (Sunset Shores) with full alpha channel specifications.
 - **2026-10-28**: Initialized Common Assets Library. Added verified official brand mark `orynza-logo.png` (2172 × 724 px) and reusable botanical stationery frame `royal-floral-frame.png` (1448 × 1086 px) with comprehensive metadata and responsive specifications.
