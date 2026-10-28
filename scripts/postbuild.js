@@ -21,7 +21,11 @@ if (fs.existsSync(dist)) {
       'template/2',
       'templates/2',
       'templates/WED-002',
-      'invite/sunset-shores'
+      'invite/sunset-shores',
+      'template/3',
+      'templates/3',
+      'templates/WED-003',
+      'invite/enchanted-gardens'
     ];
     for (const route of routes) {
       const routeDir = path.join(dist, route);

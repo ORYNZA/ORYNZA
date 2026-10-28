@@ -5,6 +5,7 @@ import InvitationPage from './pages/InvitationPage';
 import NotFoundPage from './pages/NotFoundPage';
 import RoyalLakePalaceTemplate from './templates/categories/WED/WED-001/index';
 import SunsetShoresTemplate from './templates/categories/WED/WED-002/index';
+import EnchantedGardensTemplate from './templates/categories/WED/WED-003/index';
 
 function SectionRedirect({ targetSection }) {
   useEffect(() => {
@@ -45,6 +46,12 @@ export default function App() {
       <Route path="/templates/2" element={<Navigate to="/template/2" replace />} />
       <Route path="/templates/WED-002" element={<SunsetShoresTemplate />} />
       <Route path="/invite/sunset-shores" element={<SunsetShoresTemplate />} />
+
+      {/* ORYNZA Template 3 — Enchanted Gardens */}
+      <Route path="/template/3" element={<EnchantedGardensTemplate />} />
+      <Route path="/templates/3" element={<Navigate to="/template/3" replace />} />
+      <Route path="/templates/WED-003" element={<EnchantedGardensTemplate />} />
+      <Route path="/invite/enchanted-gardens" element={<EnchantedGardensTemplate />} />
 
       {/* Reusable Couple Wedding Invitation Routes */}
       <Route path="/invite/:slug" element={<InvitationPage />} />

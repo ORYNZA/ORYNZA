@@ -96,6 +96,11 @@ export default function Footer() {
                   Sunset Shores Goa Wedding Demo
                 </Link>
               </li>
+              <li>
+                <Link to="/invite/enchanted-gardens" className="footer-link">
+                  Enchanted Gardens Botanical Demo
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -115,7 +120,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#designs" className="footer-link" onClick={(e) => handleNavClick(e, '#designs')}>
-                  Blush Romance &amp; Rose
+                  Enchanted Gardens Botanical
                 </a>
               </li>
               <li>

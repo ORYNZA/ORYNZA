@@ -28,6 +28,7 @@ export const ASSETS = {
   mockups: {
     royalLakePalace: assetUrl('/assets/invitation-mockups/design-royal-lake-palace.png'),
     sunsetShores: assetUrl('/assets/invitation-mockups/design-sunset-shores.png'),
+    enchantedGardens: assetUrl('/assets/invitation-mockups/design-enchanted-gardens.png'),
     timelessIvoryGold: assetUrl('/assets/invitation-mockups/design-timeless-ivory-gold.png'),
     botanicalSage: assetUrl('/assets/invitation-mockups/design-botanical-sage.png'),
     blushRomance: assetUrl('/assets/invitation-mockups/design-blush-romance.png'),

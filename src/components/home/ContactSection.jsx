@@ -13,7 +13,7 @@ const STYLE_OPTIONS = [
   'Not sure yet',
   'Royal Lake Palace',
   'Sunset Shores',
-  'Blush Romance',
+  'Enchanted Gardens',
   'Modern Minimal',
   'Traditional Indian',
   'Evening Reception',

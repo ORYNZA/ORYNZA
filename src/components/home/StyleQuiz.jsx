@@ -9,7 +9,7 @@ const QUESTIONS = [
     options: [
       { label: 'Royal Heritage Palace & Destination Luxury', designId: 'royal-lake-palace', icon: '🏛️' },
       { label: 'Sun-Kissed Shore, Tropical Palms & Ocean Vows', designId: 'sunset-shores', icon: '🌴' },
-      { label: 'Romantic Pastel Sangeet & Florals', designId: 'blush-romance', icon: '🌸' },
+      { label: 'Lush Botanical Canopy & Contemporary Garden', designId: 'enchanted-gardens', icon: '🌿' },
       { label: 'Sleek Contemporary & Pure Editorial', designId: 'modern-minimal', icon: '📐' },
       { label: 'Auspicious Heritage & Mandap Rituals', designId: 'traditional-indian', icon: '🪔' },
       { label: 'Black-Tie Twilight Reception & Gala', designId: 'evening-reception', icon: '✨' },
@@ -22,7 +22,7 @@ const QUESTIONS = [
     options: [
       { label: 'Udaipur Blush, Champagne & Antique Gold', designId: 'royal-lake-palace', icon: '🟡' },
       { label: 'Terracotta, Ocean Teal & Warm Sand', designId: 'sunset-shores', icon: '🌊' },
-      { label: 'Soft Dusty Rose, Coral & Tender Blush', designId: 'blush-romance', icon: '🌸' },
+      { label: 'Sage Green, Soft Blush & Warm Bronze', designId: 'enchanted-gardens', icon: '🌿' },
       { label: 'Porcelain White, Ink Black & Slate', designId: 'modern-minimal', icon: '⚪' },
       { label: 'Auspicious Saffron, Marigold & Deep Red', designId: 'traditional-indian', icon: '🟠' },
       { label: 'Velvet Charcoal, Plum & Starlit Gold', designId: 'evening-reception', icon: '🟣' },
