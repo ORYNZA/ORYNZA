@@ -8,7 +8,7 @@ const QUESTIONS = [
     subtitle: 'Choose the visual mood that resonates most with your wedding vision.',
     options: [
       { label: 'Royal Heritage Palace & Destination Luxury', designId: 'royal-lake-palace', icon: '🏛️' },
-      { label: 'Lush Garden Lawn & Open-Air Vows', designId: 'botanical-sage', icon: '🌿' },
+      { label: 'Sun-Kissed Shore, Tropical Palms & Ocean Vows', designId: 'sunset-shores', icon: '🌴' },
       { label: 'Romantic Pastel Sangeet & Florals', designId: 'blush-romance', icon: '🌸' },
       { label: 'Sleek Contemporary & Pure Editorial', designId: 'modern-minimal', icon: '📐' },
       { label: 'Auspicious Heritage & Mandap Rituals', designId: 'traditional-indian', icon: '🪔' },
@@ -21,7 +21,7 @@ const QUESTIONS = [
     subtitle: 'The shades that will weave through your digital stationery suite.',
     options: [
       { label: 'Udaipur Blush, Champagne & Antique Gold', designId: 'royal-lake-palace', icon: '🟡' },
-      { label: 'Eucalyptus, Sage & Soft Foliage Greens', designId: 'botanical-sage', icon: '🟢' },
+      { label: 'Terracotta, Ocean Teal & Warm Sand', designId: 'sunset-shores', icon: '🌊' },
       { label: 'Soft Dusty Rose, Coral & Tender Blush', designId: 'blush-romance', icon: '🌸' },
       { label: 'Porcelain White, Ink Black & Slate', designId: 'modern-minimal', icon: '⚪' },
       { label: 'Auspicious Saffron, Marigold & Deep Red', designId: 'traditional-indian', icon: '🟠' },

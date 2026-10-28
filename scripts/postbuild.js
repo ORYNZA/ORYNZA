@@ -17,7 +17,11 @@ if (fs.existsSync(dist)) {
       'template/1',
       'templates/1',
       'templates/WED-001',
-      'invite/royal-lake-palace'
+      'invite/royal-lake-palace',
+      'template/2',
+      'templates/2',
+      'templates/WED-002',
+      'invite/sunset-shores'
     ];
     for (const route of routes) {
       const routeDir = path.join(dist, route);

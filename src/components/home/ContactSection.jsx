@@ -12,7 +12,7 @@ const PACKAGE_OPTIONS = [
 const STYLE_OPTIONS = [
   'Not sure yet',
   'Royal Lake Palace',
-  'Botanical Sage',
+  'Sunset Shores',
   'Blush Romance',
   'Modern Minimal',
   'Traditional Indian',

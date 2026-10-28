@@ -1,62 +1,67 @@
-﻿{
-    "id":  "WED-002",
-    "name":  "Luxury Editorial Wedding",
-    "category":  "WED",
-    "categoryName":  "Wedding Invitations and Stationery",
-    "description":  "",
-    "status":  "draft",
-    "version":  "1.0.0",
-    "style":  "modern",
-    "paletteIds":  [
-                       "classic-neutral",
-                       "romantic-soft",
-                       "royal-luxury",
-                       "pastel-playful",
-                       "earthy-organic",
-                       "modern-corporate",
-                       "vibrant-energy",
-                       "dark-dramatic"
-                   ],
-    "defaultPalette":  "classic-neutral",
-    "customColors":  true,
-    "editableFields":  [
-                           "title",
-                           "subtitle",
-                           "date",
-                           "time",
-                           "venue",
-                           "message",
-                           "contact"
-                       ],
-    "customization":  {
-                          "typography":  true,
-                          "background":  true,
-                          "imageUpload":  false,
-                          "qrCode":  false,
-                          "decorativeElements":  true,
-                          "logo":  false,
-                          "layoutVariants":  [
-                                                 "portrait",
-                                                 "square",
-                                                 "landscape"
-                                             ]
-                      },
-    "rsvp":  {
-                 "default":  "optional",
-                 "deadline":  null,
-                 "dietaryPreferences":  false,
-                 "guestLimit":  2,
-                 "options":  [
-                                 "attending",
-                                 "not-attending",
-                                 "maybe"
-                             ],
-                 "enabled":  true
-             },
-    "tags":  [
-                 "WED",
-                 "Luxury Editorial Wedding"
-             ],
-    "preview":  "/templates/previews/WED-002.webp",
-    "createdAt":  "2026-10-27"
+{
+  "id": "WED-002",
+  "name": "Sunset Shores — A Celebration in Goa",
+  "category": "WED",
+  "categoryName": "Wedding Invitations and Stationery",
+  "description": "A luxury Indian coastal destination-wedding invitation set against the shores of Goa, featuring tropical sunsets, beachfront mandap aesthetics, terracotta and teal tones, and relaxed contemporary elegance.",
+  "status": "published",
+  "version": "1.0.0",
+  "style": "coastal",
+  "paletteIds": [
+    "coastal-terracotta",
+    "ocean-teal",
+    "warm-sand",
+    "golden-yellow",
+    "tropical-coral",
+    "deep-green"
+  ],
+  "defaultPalette": "coastal-terracotta",
+  "customColors": true,
+  "editableFields": [
+    "title",
+    "tagline",
+    "coupleNames",
+    "weddingDate",
+    "destination",
+    "venue",
+    "story",
+    "celebrations",
+    "rsvp",
+    "contact"
+  ],
+  "customization": {
+    "typography": true,
+    "background": true,
+    "imageUpload": true,
+    "qrCode": true,
+    "decorativeElements": true,
+    "logo": true,
+    "layoutVariants": [
+      "portrait",
+      "mobile-responsive",
+      "single-column"
+    ]
+  },
+  "rsvp": {
+    "default": "interactive",
+    "deadline": "2027-03-15",
+    "dietaryPreferences": true,
+    "guestLimit": 4,
+    "options": [
+      "joyfully-accepts",
+      "regretfully-declines"
+    ],
+    "enabled": true
+  },
+  "tags": [
+    "WED",
+    "Sunset Shores",
+    "Goa Wedding",
+    "Beach Wedding",
+    "Destination Wedding",
+    "Indian Wedding",
+    "Coastal Luxury"
+  ],
+  "preview": "/assets/invitation-mockups/design-sunset-shores.png",
+  "createdAt": "2026-10-28"
 }

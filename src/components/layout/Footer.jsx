@@ -92,8 +92,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/invite/example-couple" className="footer-link">
-                  Botanical Garden Vow Demo
+                <Link to="/invite/sunset-shores" className="footer-link">
+                  Sunset Shores Goa Wedding Demo
                 </Link>
               </li>
             </ul>
@@ -110,7 +110,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#designs" className="footer-link" onClick={(e) => handleNavClick(e, '#designs')}>
-                  Botanical Sage &amp; Foliage
+                  Sunset Shores Coastal &amp; Beach
                 </a>
               </li>
               <li>

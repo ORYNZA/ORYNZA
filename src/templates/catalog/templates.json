@@ -1,4 +1,4 @@
-﻿{
+{
     "totalTemplates": 150,
     "templates": [
         {
@@ -13,12 +13,13 @@
         },
         {
             "id": "WED-002",
-            "name": "Luxury Editorial Wedding",
+            "name": "Sunset Shores — A Celebration in Goa",
             "category": "WED",
             "categoryName": "Wedding Invitations and Stationery",
-            "status": "draft",
+            "status": "published",
             "configPath": "categories/WED/WED-002/template.json",
-            "componentPath": "categories/WED/WED-002/index.jsx"
+            "componentPath": "categories/WED/WED-002/index.jsx",
+            "description": "A luxury Indian coastal destination-wedding invitation set against the shores of Goa, featuring tropical sunsets, beachfront mandap aesthetics, terracotta and teal tones, and relaxed contemporary elegance."
         },
         {
             "id": "WED-003",
