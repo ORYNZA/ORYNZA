@@ -92,6 +92,29 @@ This directory serves as the centralized repository for shared, multi-template v
 
 ---
 
+### 5. `pasture-botanical-overlay.png`
+- **Relative Path**: `src/templates/common assets/pasture-botanical-overlay.png`
+- **Asset Category**: Mountain Pasture Meadow Overlay & Framing Accent
+- **Verified Format**: PNG (Portable Network Graphics with indexed palette & transparency)
+- **Verified Dimensions**: 1448 × 1086 px
+- **Aspect Ratio**: 4:3 (approx. 1.333:1)
+- **Alpha Transparency**: Yes (8-bit alpha transparency preserved)
+- **Main Colors**:
+  - Sage Green: `#A7C957`
+  - Forest Green: `#2F7942`
+  - Sand Beige: `#D4B895`
+  - Muted Bronze: `#C9A96B`
+  - Deep Green: `#243E2F`
+- **Visual Subject & Style**: Serene mountain pasture flora, wild grass blades, delicate meadow blossoms, and restrained botanical flourishes.
+- **Intended Usage**: Subtle editorial backdrop framing, ceremony section accents, and gentle stationery borders.
+- **Recommended Background & Contrast**: Best layered over warm ivory (`#F6EFE6`) or light sand beige with `opacity: 0.25–0.45`.
+- **Responsive Guidance**: Set with `pointer-events: none` and `aria-hidden="true"`.
+- **First Introduced**: `WED-004` (Meadows of Barakah)
+- **Suitability for Reuse**: High (Muslim, Nature, Mountain, Spring, Autumn Weddings `WED`, Engagements `ENG`).
+- **Source & Provenance**: Custom bespoke ORYNZA invitation botanical asset created for `WED-004`.
+
+---
+
 ## Library Conventions & Guidelines
 
 1. **Format Standards**: Transparent decorative overlays must be genuine 8-bit or 16-bit RGBA PNGs. Opaque scenic photographs should be web-optimized RGB PNG or WebP.
@@ -103,6 +126,7 @@ This directory serves as the centralized repository for shared, multi-template v
 
 ## Change History
 
+- **2026-10-28**: Added reusable mountain meadow overlay `pasture-botanical-overlay.png` (1448 × 1086 px) for `WED-004` (Meadows of Barakah) with transparency specifications.
 - **2026-10-28**: Added reusable botanical foliage overlay `garden-botanical-overlay.png` (1643 × 957 px) for `WED-003` (Enchanted Gardens) with transparency specifications.
 - **2026-10-28**: Added reusable tropical coastal stationery frame `goa-floral-frame.png` (1448 × 1086 px) for `WED-002` (Sunset Shores) with full alpha channel specifications.
 - **2026-10-28**: Initialized Common Assets Library. Added verified official brand mark `orynza-logo.png` (2172 × 724 px) and reusable botanical stationery frame `royal-floral-frame.png` (1448 × 1086 px) with comprehensive metadata and responsive specifications.
