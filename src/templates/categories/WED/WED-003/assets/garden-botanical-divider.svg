@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 32" fill="none" stroke="currentColor">
+  <!-- Central botanical motif -->
+  <path d="M10 16 H115" stroke="#A67C52" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+  <circle cx="120" cy="16" r="2" fill="#A67C52" opacity="0.8"/>
+  
+  <!-- Left branch -->
+  <path d="M125 16 C135 14, 142 10, 150 15 C147 11, 140 10, 134 14" fill="#587F5B" opacity="0.85"/>
+  <path d="M138 16 C143 19, 149 20, 154 17 C150 20, 143 19, 140 17" fill="#587F5B" opacity="0.85"/>
+  <circle cx="146" cy="11" r="1.5" fill="#C65A6A" opacity="0.9"/>
+
+  <!-- Center floral bloom -->
+  <path d="M160 8 C156 12, 156 18, 160 22 C164 18, 164 12, 160 8 Z" fill="#C65A6A" opacity="0.85"/>
+  <circle cx="160" cy="15" r="2.2" fill="#A67C52"/>
+  <path d="M153 15 C156 13, 164 13, 167 15 C164 17, 156 17, 153 15 Z" fill="#587F5B" opacity="0.7"/>
+
+  <!-- Right branch -->
+  <path d="M195 16 C185 14, 178 10, 170 15 C173 11, 180 10, 186 14" fill="#587F5B" opacity="0.85"/>
+  <path d="M182 16 C177 19, 171 20, 166 17 C170 20, 177 19, 180 17" fill="#587F5B" opacity="0.85"/>
+  <circle cx="174" cy="11" r="1.5" fill="#C65A6A" opacity="0.9"/>
+
+  <circle cx="200" cy="16" r="2" fill="#A67C52" opacity="0.8"/>
+  <path d="M205 16 H310" stroke="#A67C52" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+</svg>
