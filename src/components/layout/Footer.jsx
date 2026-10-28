@@ -105,7 +105,7 @@ export default function Footer() {
             <ul className="footer-links-list">
               <li>
                 <a href="#designs" className="footer-link" onClick={(e) => handleNavClick(e, '#designs')}>
-                  Timeless Ivory &amp; Gold
+                  Royal Lake Palace
                 </a>
               </li>
               <li>

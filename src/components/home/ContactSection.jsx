@@ -11,7 +11,7 @@ const PACKAGE_OPTIONS = [
 
 const STYLE_OPTIONS = [
   'Not sure yet',
-  'Timeless Ivory & Gold',
+  'Royal Lake Palace',
   'Botanical Sage',
   'Blush Romance',
   'Modern Minimal',
@@ -79,7 +79,7 @@ export default function ContactSection({ selectedPackage, selectedDesign, onPack
       formData.coupleNames.trim() ? `*Couple Names:* ${formData.coupleNames.trim()}` : null,
       formData.weddingDate ? `*Wedding Date:* ${formData.weddingDate}` : null,
       `*Chosen Package:* ${selectedPackage || 'Wedding Plus (₹899)'}`,
-      `*Chosen Style:* ${selectedDesign || 'Timeless Ivory & Gold'}`,
+      `*Chosen Style:* ${selectedDesign || 'Royal Lake Palace'}`,
       formData.functions ? `*Functions:* ${formData.functions}` : null,
       formData.notes.trim() ? `*Special Notes / Requirements:* ${formData.notes.trim()}` : null,
       `---------------------------------`,
@@ -235,7 +235,7 @@ export default function ContactSection({ selectedPackage, selectedDesign, onPack
               <select
                 id="contact-style"
                 className="form-select"
-                value={selectedDesign || 'Timeless Ivory & Gold'}
+                value={selectedDesign || 'Royal Lake Palace'}
                 onChange={(e) => onDesignChange(e.target.value)}
               >
                 {STYLE_OPTIONS.map((opt) => (

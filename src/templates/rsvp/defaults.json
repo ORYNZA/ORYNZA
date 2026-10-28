@@ -1,0 +1,23 @@
+﻿{
+    "defaultEnabled":  false,
+    "responseOptions":  [
+                            "attending",
+                            "not-attending",
+                            "maybe"
+                        ],
+    "features":  {
+                     "calendarLink":  true,
+                     "guestLimit":  true,
+                     "dietaryPreferences":  true,
+                     "deadline":  true,
+                     "confirmationMessage":  true
+                 },
+    "fields":  [
+                   "guestName",
+                   "guestCount",
+                   "email",
+                   "dietaryPreferences",
+                   "message"
+               ],
+    "note":  "Backend integration is required to collect and store responses."
+}

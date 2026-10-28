@@ -1,0 +1,68 @@
+{
+  "id": "WED-001",
+  "name": "Royal Lake Palace",
+  "title": "Royal Lake Palace — Udaipur Luxury Wedding",
+  "category": "WED",
+  "categoryName": "Wedding Invitations and Stationery",
+  "description": "A luxury Indian destination-wedding invitation inspired by Udaipur palace architecture, Lake Pichola, sunset reflections, floral installations, and elegant wedding stationery.",
+  "status": "published",
+  "version": "2.1.0",
+  "style": "royal-luxury",
+  "palette": {
+    "warmBlushIvory": "#F8E9DF",
+    "weddingBurgundy": "#8F2637",
+    "champagnePeach": "#F2D7C6",
+    "gardenGreen": "#25483B",
+    "antiqueGold": "#D5AC78",
+    "deepBrown": "#54251F"
+  },
+  "defaultPalette": "royal-luxury",
+  "editableFields": [
+    "couple",
+    "title",
+    "date",
+    "destination",
+    "venue",
+    "intro",
+    "celebrations",
+    "ceremonyMandap",
+    "travel",
+    "rsvp",
+    "closing"
+  ],
+  "customization": {
+    "typography": true,
+    "background": true,
+    "imageUpload": true,
+    "decorativeElements": true,
+    "layoutVariants": ["portrait", "landscape"]
+  },
+  "rsvp": {
+    "default": "optional",
+    "deadline": "2027-01-15",
+    "dietaryPreferences": true,
+    "guestLimit": 4,
+    "options": ["attending", "not-attending"],
+    "enabled": true
+  },
+  "assets": {
+    "logo": "assets/orynza-logo.png",
+    "hero": "assets/royal-palace-hero.png",
+    "portrait": "assets/royal-couple-portrait.png",
+    "panels": "assets/royal-celebration-panels.png",
+    "floralFrame": "assets/royal-floral-frame.png",
+    "finale": "assets/royal-lake-finale.png",
+    "venueDetail": "assets/royal-venue-detail.png",
+    "ceremonyMandap": "assets/royal-ceremony-mandap.png"
+  },
+  "tags": [
+    "WED",
+    "Royal Lake Palace",
+    "Udaipur",
+    "Destination Wedding",
+    "Luxury Invitation"
+  ],
+  "preview": "/templates/previews/WED-001.webp",
+  "createdAt": "2026-10-27",
+  "updatedAt": "2026-10-28"
+}

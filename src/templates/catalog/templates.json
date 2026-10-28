@@ -1,0 +1,1435 @@
+﻿{
+    "totalTemplates": 150,
+    "templates": [
+        {
+            "id": "WED-001",
+            "name": "Royal Lake Palace — Udaipur Luxury Wedding",
+            "category": "WED",
+            "categoryName": "Wedding Invitations and Stationery",
+            "status": "published",
+            "configPath": "categories/WED/WED-001/template.json",
+            "componentPath": "categories/WED/WED-001/index.jsx",
+            "description": "A luxury Indian destination-wedding invitation inspired by Udaipur palace architecture, Lake Pichola, sunset reflections, and floral stationery."
+        },
+        {
+            "id": "WED-002",
+            "name": "Luxury Editorial Wedding",
+            "category": "WED",
+            "categoryName": "Wedding Invitations and Stationery",
+            "status": "draft",
+            "configPath": "categories/WED/WED-002/template.json",
+            "componentPath": "categories/WED/WED-002/index.jsx"
+        },
+        {
+            "id": "WED-003",
+            "name": "Floral Garden Wedding",
+            "category": "WED",
+            "categoryName": "Wedding Invitations and Stationery",
+            "status": "draft",
+            "configPath": "categories/WED/WED-003/template.json",
+            "componentPath": "categories/WED/WED-003/index.jsx"
+        },
+        {
+            "id": "WED-004",
+            "name": "Minimal Modern Wedding",
+            "category": "WED",
+            "categoryName": "Wedding Invitations and Stationery",
+            "status": "draft",
+            "configPath": "categories/WED/WED-004/template.json",
+            "componentPath": "categories/WED/WED-004/index.jsx"
+        },
+        {
+            "id": "WED-005",
+            "name": "Traditional Indian Wedding",
+            "category": "WED",
+            "categoryName": "Wedding Invitations and Stationery",
+            "status": "draft",
+            "configPath": "categories/WED/WED-005/template.json",
+            "componentPath": "categories/WED/WED-005/index.jsx"
+        },
+        {
+            "id": "WED-006",
+            "name": "South Indian Traditional Wedding",
+            "category": "WED",
+            "categoryName": "Wedding Invitations and Stationery",
+            "status": "draft",
+            "configPath": "categories/WED/WED-006/template.json",
+            "componentPath": "categories/WED/WED-006/index.jsx"
+        },
+        {
+            "id": "WED-007",
+            "name": "Destination Wedding",
+            "category": "WED",
+            "categoryName": "Wedding Invitations and Stationery",
+            "status": "draft",
+            "configPath": "categories/WED/WED-007/template.json",
+            "componentPath": "categories/WED/WED-007/index.jsx"
+        },
+        {
+            "id": "WED-008",
+            "name": "Rustic Countryside Wedding",
+            "category": "WED",
+            "categoryName": "Wedding Invitations and Stationery",
+            "status": "draft",
+            "configPath": "categories/WED/WED-008/template.json",
+            "componentPath": "categories/WED/WED-008/index.jsx"
+        },
+        {
+            "id": "WED-009",
+            "name": "Watercolour Wedding",
+            "category": "WED",
+            "categoryName": "Wedding Invitations and Stationery",
+            "status": "draft",
+            "configPath": "categories/WED/WED-009/template.json",
+            "componentPath": "categories/WED/WED-009/index.jsx"
+        },
+        {
+            "id": "WED-010",
+            "name": "Wedding Invitation Suite",
+            "category": "WED",
+            "categoryName": "Wedding Invitations and Stationery",
+            "status": "draft",
+            "configPath": "categories/WED/WED-010/template.json",
+            "componentPath": "categories/WED/WED-010/index.jsx"
+        },
+        {
+            "id": "BIR-001",
+            "name": "First Birthday",
+            "category": "BIR",
+            "categoryName": "Birthday Invitations",
+            "status": "draft",
+            "configPath": "categories/BIR/BIR-001/template.json",
+            "componentPath": "categories/BIR/BIR-001/index.jsx"
+        },
+        {
+            "id": "BIR-002",
+            "name": "Children Cartoon Party",
+            "category": "BIR",
+            "categoryName": "Birthday Invitations",
+            "status": "draft",
+            "configPath": "categories/BIR/BIR-002/template.json",
+            "componentPath": "categories/BIR/BIR-002/index.jsx"
+        },
+        {
+            "id": "BIR-003",
+            "name": "Princess Fairy Birthday",
+            "category": "BIR",
+            "categoryName": "Birthday Invitations",
+            "status": "draft",
+            "configPath": "categories/BIR/BIR-003/template.json",
+            "componentPath": "categories/BIR/BIR-003/index.jsx"
+        },
+        {
+            "id": "BIR-004",
+            "name": "Superhero Action Party",
+            "category": "BIR",
+            "categoryName": "Birthday Invitations",
+            "status": "draft",
+            "configPath": "categories/BIR/BIR-004/template.json",
+            "componentPath": "categories/BIR/BIR-004/index.jsx"
+        },
+        {
+            "id": "BIR-005",
+            "name": "Teen Birthday",
+            "category": "BIR",
+            "categoryName": "Birthday Invitations",
+            "status": "draft",
+            "configPath": "categories/BIR/BIR-005/template.json",
+            "componentPath": "categories/BIR/BIR-005/index.jsx"
+        },
+        {
+            "id": "BIR-006",
+            "name": "18th or 21st Birthday",
+            "category": "BIR",
+            "categoryName": "Birthday Invitations",
+            "status": "draft",
+            "configPath": "categories/BIR/BIR-006/template.json",
+            "componentPath": "categories/BIR/BIR-006/index.jsx"
+        },
+        {
+            "id": "BIR-007",
+            "name": "Milestone Birthday",
+            "category": "BIR",
+            "categoryName": "Birthday Invitations",
+            "status": "draft",
+            "configPath": "categories/BIR/BIR-007/template.json",
+            "componentPath": "categories/BIR/BIR-007/index.jsx"
+        },
+        {
+            "id": "BIR-008",
+            "name": "Elegant Adult Birthday",
+            "category": "BIR",
+            "categoryName": "Birthday Invitations",
+            "status": "draft",
+            "configPath": "categories/BIR/BIR-008/template.json",
+            "componentPath": "categories/BIR/BIR-008/index.jsx"
+        },
+        {
+            "id": "BIR-009",
+            "name": "Outdoor Pool Birthday",
+            "category": "BIR",
+            "categoryName": "Birthday Invitations",
+            "status": "draft",
+            "configPath": "categories/BIR/BIR-009/template.json",
+            "componentPath": "categories/BIR/BIR-009/index.jsx"
+        },
+        {
+            "id": "BIR-010",
+            "name": "Surprise Birthday",
+            "category": "BIR",
+            "categoryName": "Birthday Invitations",
+            "status": "draft",
+            "configPath": "categories/BIR/BIR-010/template.json",
+            "componentPath": "categories/BIR/BIR-010/index.jsx"
+        },
+        {
+            "id": "BAB-001",
+            "name": "Baby Shower",
+            "category": "BAB",
+            "categoryName": "Baby Pregnancy and Family Announcements",
+            "status": "draft",
+            "configPath": "categories/BAB/BAB-001/template.json",
+            "componentPath": "categories/BAB/BAB-001/index.jsx"
+        },
+        {
+            "id": "BAB-002",
+            "name": "Gender Reveal",
+            "category": "BAB",
+            "categoryName": "Baby Pregnancy and Family Announcements",
+            "status": "draft",
+            "configPath": "categories/BAB/BAB-002/template.json",
+            "componentPath": "categories/BAB/BAB-002/index.jsx"
+        },
+        {
+            "id": "BAB-003",
+            "name": "Pregnancy Announcement",
+            "category": "BAB",
+            "categoryName": "Baby Pregnancy and Family Announcements",
+            "status": "draft",
+            "configPath": "categories/BAB/BAB-003/template.json",
+            "componentPath": "categories/BAB/BAB-003/index.jsx"
+        },
+        {
+            "id": "BAB-004",
+            "name": "Birth Announcement",
+            "category": "BAB",
+            "categoryName": "Baby Pregnancy and Family Announcements",
+            "status": "draft",
+            "configPath": "categories/BAB/BAB-004/template.json",
+            "componentPath": "categories/BAB/BAB-004/index.jsx"
+        },
+        {
+            "id": "BAB-005",
+            "name": "Baby Naming Ceremony",
+            "category": "BAB",
+            "categoryName": "Baby Pregnancy and Family Announcements",
+            "status": "draft",
+            "configPath": "categories/BAB/BAB-005/template.json",
+            "componentPath": "categories/BAB/BAB-005/index.jsx"
+        },
+        {
+            "id": "BAB-006",
+            "name": "Baptism",
+            "category": "BAB",
+            "categoryName": "Baby Pregnancy and Family Announcements",
+            "status": "draft",
+            "configPath": "categories/BAB/BAB-006/template.json",
+            "componentPath": "categories/BAB/BAB-006/index.jsx"
+        },
+        {
+            "id": "BAB-007",
+            "name": "Christening",
+            "category": "BAB",
+            "categoryName": "Baby Pregnancy and Family Announcements",
+            "status": "draft",
+            "configPath": "categories/BAB/BAB-007/template.json",
+            "componentPath": "categories/BAB/BAB-007/index.jsx"
+        },
+        {
+            "id": "BAB-008",
+            "name": "First Month or 100 Day Celebration",
+            "category": "BAB",
+            "categoryName": "Baby Pregnancy and Family Announcements",
+            "status": "draft",
+            "configPath": "categories/BAB/BAB-008/template.json",
+            "componentPath": "categories/BAB/BAB-008/index.jsx"
+        },
+        {
+            "id": "BAB-009",
+            "name": "Welcome Home Baby",
+            "category": "BAB",
+            "categoryName": "Baby Pregnancy and Family Announcements",
+            "status": "draft",
+            "configPath": "categories/BAB/BAB-009/template.json",
+            "componentPath": "categories/BAB/BAB-009/index.jsx"
+        },
+        {
+            "id": "BAB-010",
+            "name": "Family Portrait Announcement",
+            "category": "BAB",
+            "categoryName": "Baby Pregnancy and Family Announcements",
+            "status": "draft",
+            "configPath": "categories/BAB/BAB-010/template.json",
+            "componentPath": "categories/BAB/BAB-010/index.jsx"
+        },
+        {
+            "id": "ENG-001",
+            "name": "Engagement Ceremony",
+            "category": "ENG",
+            "categoryName": "Engagements and Pre-Wedding Events",
+            "status": "draft",
+            "configPath": "categories/ENG/ENG-001/template.json",
+            "componentPath": "categories/ENG/ENG-001/index.jsx"
+        },
+        {
+            "id": "ENG-002",
+            "name": "Proposal Announcement",
+            "category": "ENG",
+            "categoryName": "Engagements and Pre-Wedding Events",
+            "status": "draft",
+            "configPath": "categories/ENG/ENG-002/template.json",
+            "componentPath": "categories/ENG/ENG-002/index.jsx"
+        },
+        {
+            "id": "ENG-003",
+            "name": "Bridal Shower",
+            "category": "ENG",
+            "categoryName": "Engagements and Pre-Wedding Events",
+            "status": "draft",
+            "configPath": "categories/ENG/ENG-003/template.json",
+            "componentPath": "categories/ENG/ENG-003/index.jsx"
+        },
+        {
+            "id": "ENG-004",
+            "name": "Bachelorette Party",
+            "category": "ENG",
+            "categoryName": "Engagements and Pre-Wedding Events",
+            "status": "draft",
+            "configPath": "categories/ENG/ENG-004/template.json",
+            "componentPath": "categories/ENG/ENG-004/index.jsx"
+        },
+        {
+            "id": "ENG-005",
+            "name": "Bachelor Party",
+            "category": "ENG",
+            "categoryName": "Engagements and Pre-Wedding Events",
+            "status": "draft",
+            "configPath": "categories/ENG/ENG-005/template.json",
+            "componentPath": "categories/ENG/ENG-005/index.jsx"
+        },
+        {
+            "id": "ENG-006",
+            "name": "Mehendi Ceremony",
+            "category": "ENG",
+            "categoryName": "Engagements and Pre-Wedding Events",
+            "status": "draft",
+            "configPath": "categories/ENG/ENG-006/template.json",
+            "componentPath": "categories/ENG/ENG-006/index.jsx"
+        },
+        {
+            "id": "ENG-007",
+            "name": "Haldi Ceremony",
+            "category": "ENG",
+            "categoryName": "Engagements and Pre-Wedding Events",
+            "status": "draft",
+            "configPath": "categories/ENG/ENG-007/template.json",
+            "componentPath": "categories/ENG/ENG-007/index.jsx"
+        },
+        {
+            "id": "ENG-008",
+            "name": "Sangeet Night",
+            "category": "ENG",
+            "categoryName": "Engagements and Pre-Wedding Events",
+            "status": "draft",
+            "configPath": "categories/ENG/ENG-008/template.json",
+            "componentPath": "categories/ENG/ENG-008/index.jsx"
+        },
+        {
+            "id": "ENG-009",
+            "name": "Rehearsal Dinner",
+            "category": "ENG",
+            "categoryName": "Engagements and Pre-Wedding Events",
+            "status": "draft",
+            "configPath": "categories/ENG/ENG-009/template.json",
+            "componentPath": "categories/ENG/ENG-009/index.jsx"
+        },
+        {
+            "id": "ENG-010",
+            "name": "Wedding Countdown",
+            "category": "ENG",
+            "categoryName": "Engagements and Pre-Wedding Events",
+            "status": "draft",
+            "configPath": "categories/ENG/ENG-010/template.json",
+            "componentPath": "categories/ENG/ENG-010/index.jsx"
+        },
+        {
+            "id": "HOM-001",
+            "name": "Housewarming",
+            "category": "HOM",
+            "categoryName": "Housewarming and Personal Milestones",
+            "status": "draft",
+            "configPath": "categories/HOM/HOM-001/template.json",
+            "componentPath": "categories/HOM/HOM-001/index.jsx"
+        },
+        {
+            "id": "HOM-002",
+            "name": "Griha Pravesh",
+            "category": "HOM",
+            "categoryName": "Housewarming and Personal Milestones",
+            "status": "draft",
+            "configPath": "categories/HOM/HOM-002/template.json",
+            "componentPath": "categories/HOM/HOM-002/index.jsx"
+        },
+        {
+            "id": "HOM-003",
+            "name": "New Home Announcement",
+            "category": "HOM",
+            "categoryName": "Housewarming and Personal Milestones",
+            "status": "draft",
+            "configPath": "categories/HOM/HOM-003/template.json",
+            "componentPath": "categories/HOM/HOM-003/index.jsx"
+        },
+        {
+            "id": "HOM-004",
+            "name": "Wedding Anniversary",
+            "category": "HOM",
+            "categoryName": "Housewarming and Personal Milestones",
+            "status": "draft",
+            "configPath": "categories/HOM/HOM-004/template.json",
+            "componentPath": "categories/HOM/HOM-004/index.jsx"
+        },
+        {
+            "id": "HOM-005",
+            "name": "Retirement Celebration",
+            "category": "HOM",
+            "categoryName": "Housewarming and Personal Milestones",
+            "status": "draft",
+            "configPath": "categories/HOM/HOM-005/template.json",
+            "componentPath": "categories/HOM/HOM-005/index.jsx"
+        },
+        {
+            "id": "HOM-006",
+            "name": "Family Reunion",
+            "category": "HOM",
+            "categoryName": "Housewarming and Personal Milestones",
+            "status": "draft",
+            "configPath": "categories/HOM/HOM-006/template.json",
+            "componentPath": "categories/HOM/HOM-006/index.jsx"
+        },
+        {
+            "id": "HOM-007",
+            "name": "Class Reunion",
+            "category": "HOM",
+            "categoryName": "Housewarming and Personal Milestones",
+            "status": "draft",
+            "configPath": "categories/HOM/HOM-007/template.json",
+            "componentPath": "categories/HOM/HOM-007/index.jsx"
+        },
+        {
+            "id": "HOM-008",
+            "name": "Personal Achievement",
+            "category": "HOM",
+            "categoryName": "Housewarming and Personal Milestones",
+            "status": "draft",
+            "configPath": "categories/HOM/HOM-008/template.json",
+            "componentPath": "categories/HOM/HOM-008/index.jsx"
+        },
+        {
+            "id": "HOM-009",
+            "name": "New Venture Announcement",
+            "category": "HOM",
+            "categoryName": "Housewarming and Personal Milestones",
+            "status": "draft",
+            "configPath": "categories/HOM/HOM-009/template.json",
+            "componentPath": "categories/HOM/HOM-009/index.jsx"
+        },
+        {
+            "id": "HOM-010",
+            "name": "Farewell Gathering",
+            "category": "HOM",
+            "categoryName": "Housewarming and Personal Milestones",
+            "status": "draft",
+            "configPath": "categories/HOM/HOM-010/template.json",
+            "componentPath": "categories/HOM/HOM-010/index.jsx"
+        },
+        {
+            "id": "COR-001",
+            "name": "Corporate Conference",
+            "category": "COR",
+            "categoryName": "Corporate Events and Conferences",
+            "status": "draft",
+            "configPath": "categories/COR/COR-001/template.json",
+            "componentPath": "categories/COR/COR-001/index.jsx"
+        },
+        {
+            "id": "COR-002",
+            "name": "Business Seminar",
+            "category": "COR",
+            "categoryName": "Corporate Events and Conferences",
+            "status": "draft",
+            "configPath": "categories/COR/COR-002/template.json",
+            "componentPath": "categories/COR/COR-002/index.jsx"
+        },
+        {
+            "id": "COR-003",
+            "name": "Networking Event",
+            "category": "COR",
+            "categoryName": "Corporate Events and Conferences",
+            "status": "draft",
+            "configPath": "categories/COR/COR-003/template.json",
+            "componentPath": "categories/COR/COR-003/index.jsx"
+        },
+        {
+            "id": "COR-004",
+            "name": "Product Launch Event",
+            "category": "COR",
+            "categoryName": "Corporate Events and Conferences",
+            "status": "draft",
+            "configPath": "categories/COR/COR-004/template.json",
+            "componentPath": "categories/COR/COR-004/index.jsx"
+        },
+        {
+            "id": "COR-005",
+            "name": "Annual General Meeting",
+            "category": "COR",
+            "categoryName": "Corporate Events and Conferences",
+            "status": "draft",
+            "configPath": "categories/COR/COR-005/template.json",
+            "componentPath": "categories/COR/COR-005/index.jsx"
+        },
+        {
+            "id": "COR-006",
+            "name": "Employee Recognition",
+            "category": "COR",
+            "categoryName": "Corporate Events and Conferences",
+            "status": "draft",
+            "configPath": "categories/COR/COR-006/template.json",
+            "componentPath": "categories/COR/COR-006/index.jsx"
+        },
+        {
+            "id": "COR-007",
+            "name": "Team Building",
+            "category": "COR",
+            "categoryName": "Corporate Events and Conferences",
+            "status": "draft",
+            "configPath": "categories/COR/COR-007/template.json",
+            "componentPath": "categories/COR/COR-007/index.jsx"
+        },
+        {
+            "id": "COR-008",
+            "name": "Investor Meeting",
+            "category": "COR",
+            "categoryName": "Corporate Events and Conferences",
+            "status": "draft",
+            "configPath": "categories/COR/COR-008/template.json",
+            "componentPath": "categories/COR/COR-008/index.jsx"
+        },
+        {
+            "id": "COR-009",
+            "name": "Training Workshop",
+            "category": "COR",
+            "categoryName": "Corporate Events and Conferences",
+            "status": "draft",
+            "configPath": "categories/COR/COR-009/template.json",
+            "componentPath": "categories/COR/COR-009/index.jsx"
+        },
+        {
+            "id": "COR-010",
+            "name": "Company Anniversary",
+            "category": "COR",
+            "categoryName": "Corporate Events and Conferences",
+            "status": "draft",
+            "configPath": "categories/COR/COR-010/template.json",
+            "componentPath": "categories/COR/COR-010/index.jsx"
+        },
+        {
+            "id": "MKT-001",
+            "name": "Grand Opening",
+            "category": "MKT",
+            "categoryName": "Business Promotions and Marketing",
+            "status": "draft",
+            "configPath": "categories/MKT/MKT-001/template.json",
+            "componentPath": "categories/MKT/MKT-001/index.jsx"
+        },
+        {
+            "id": "MKT-002",
+            "name": "Seasonal Sale",
+            "category": "MKT",
+            "categoryName": "Business Promotions and Marketing",
+            "status": "draft",
+            "configPath": "categories/MKT/MKT-002/template.json",
+            "componentPath": "categories/MKT/MKT-002/index.jsx"
+        },
+        {
+            "id": "MKT-003",
+            "name": "Luxury Product Launch",
+            "category": "MKT",
+            "categoryName": "Business Promotions and Marketing",
+            "status": "draft",
+            "configPath": "categories/MKT/MKT-003/template.json",
+            "componentPath": "categories/MKT/MKT-003/index.jsx"
+        },
+        {
+            "id": "MKT-004",
+            "name": "New Store Opening",
+            "category": "MKT",
+            "categoryName": "Business Promotions and Marketing",
+            "status": "draft",
+            "configPath": "categories/MKT/MKT-004/template.json",
+            "componentPath": "categories/MKT/MKT-004/index.jsx"
+        },
+        {
+            "id": "MKT-005",
+            "name": "Limited Time Offer",
+            "category": "MKT",
+            "categoryName": "Business Promotions and Marketing",
+            "status": "draft",
+            "configPath": "categories/MKT/MKT-005/template.json",
+            "componentPath": "categories/MKT/MKT-005/index.jsx"
+        },
+        {
+            "id": "MKT-006",
+            "name": "Service Launch",
+            "category": "MKT",
+            "categoryName": "Business Promotions and Marketing",
+            "status": "draft",
+            "configPath": "categories/MKT/MKT-006/template.json",
+            "componentPath": "categories/MKT/MKT-006/index.jsx"
+        },
+        {
+            "id": "MKT-007",
+            "name": "Customer Appreciation",
+            "category": "MKT",
+            "categoryName": "Business Promotions and Marketing",
+            "status": "draft",
+            "configPath": "categories/MKT/MKT-007/template.json",
+            "componentPath": "categories/MKT/MKT-007/index.jsx"
+        },
+        {
+            "id": "MKT-008",
+            "name": "Loyalty Programme",
+            "category": "MKT",
+            "categoryName": "Business Promotions and Marketing",
+            "status": "draft",
+            "configPath": "categories/MKT/MKT-008/template.json",
+            "componentPath": "categories/MKT/MKT-008/index.jsx"
+        },
+        {
+            "id": "MKT-009",
+            "name": "Discount Coupon",
+            "category": "MKT",
+            "categoryName": "Business Promotions and Marketing",
+            "status": "draft",
+            "configPath": "categories/MKT/MKT-009/template.json",
+            "componentPath": "categories/MKT/MKT-009/index.jsx"
+        },
+        {
+            "id": "MKT-010",
+            "name": "Brand Awareness Campaign",
+            "category": "MKT",
+            "categoryName": "Business Promotions and Marketing",
+            "status": "draft",
+            "configPath": "categories/MKT/MKT-010/template.json",
+            "componentPath": "categories/MKT/MKT-010/index.jsx"
+        },
+        {
+            "id": "FES-001",
+            "name": "Diwali",
+            "category": "FES",
+            "categoryName": "Festivals and Seasonal Celebrations",
+            "status": "draft",
+            "configPath": "categories/FES/FES-001/template.json",
+            "componentPath": "categories/FES/FES-001/index.jsx"
+        },
+        {
+            "id": "FES-002",
+            "name": "Eid",
+            "category": "FES",
+            "categoryName": "Festivals and Seasonal Celebrations",
+            "status": "draft",
+            "configPath": "categories/FES/FES-002/template.json",
+            "componentPath": "categories/FES/FES-002/index.jsx"
+        },
+        {
+            "id": "FES-003",
+            "name": "Holi",
+            "category": "FES",
+            "categoryName": "Festivals and Seasonal Celebrations",
+            "status": "draft",
+            "configPath": "categories/FES/FES-003/template.json",
+            "componentPath": "categories/FES/FES-003/index.jsx"
+        },
+        {
+            "id": "FES-004",
+            "name": "Christmas",
+            "category": "FES",
+            "categoryName": "Festivals and Seasonal Celebrations",
+            "status": "draft",
+            "configPath": "categories/FES/FES-004/template.json",
+            "componentPath": "categories/FES/FES-004/index.jsx"
+        },
+        {
+            "id": "FES-005",
+            "name": "New Year",
+            "category": "FES",
+            "categoryName": "Festivals and Seasonal Celebrations",
+            "status": "draft",
+            "configPath": "categories/FES/FES-005/template.json",
+            "componentPath": "categories/FES/FES-005/index.jsx"
+        },
+        {
+            "id": "FES-006",
+            "name": "Onam",
+            "category": "FES",
+            "categoryName": "Festivals and Seasonal Celebrations",
+            "status": "draft",
+            "configPath": "categories/FES/FES-006/template.json",
+            "componentPath": "categories/FES/FES-006/index.jsx"
+        },
+        {
+            "id": "FES-007",
+            "name": "Pongal",
+            "category": "FES",
+            "categoryName": "Festivals and Seasonal Celebrations",
+            "status": "draft",
+            "configPath": "categories/FES/FES-007/template.json",
+            "componentPath": "categories/FES/FES-007/index.jsx"
+        },
+        {
+            "id": "FES-008",
+            "name": "Easter",
+            "category": "FES",
+            "categoryName": "Festivals and Seasonal Celebrations",
+            "status": "draft",
+            "configPath": "categories/FES/FES-008/template.json",
+            "componentPath": "categories/FES/FES-008/index.jsx"
+        },
+        {
+            "id": "FES-009",
+            "name": "Thanksgiving Harvest",
+            "category": "FES",
+            "categoryName": "Festivals and Seasonal Celebrations",
+            "status": "draft",
+            "configPath": "categories/FES/FES-009/template.json",
+            "componentPath": "categories/FES/FES-009/index.jsx"
+        },
+        {
+            "id": "FES-010",
+            "name": "Spring Summer Celebration",
+            "category": "FES",
+            "categoryName": "Festivals and Seasonal Celebrations",
+            "status": "draft",
+            "configPath": "categories/FES/FES-010/template.json",
+            "componentPath": "categories/FES/FES-010/index.jsx"
+        },
+        {
+            "id": "ACA-001",
+            "name": "Graduation Announcement",
+            "category": "ACA",
+            "categoryName": "Graduation Academic and Achievement",
+            "status": "draft",
+            "configPath": "categories/ACA/ACA-001/template.json",
+            "componentPath": "categories/ACA/ACA-001/index.jsx"
+        },
+        {
+            "id": "ACA-002",
+            "name": "Graduation Party",
+            "category": "ACA",
+            "categoryName": "Graduation Academic and Achievement",
+            "status": "draft",
+            "configPath": "categories/ACA/ACA-002/template.json",
+            "componentPath": "categories/ACA/ACA-002/index.jsx"
+        },
+        {
+            "id": "ACA-003",
+            "name": "Convocation",
+            "category": "ACA",
+            "categoryName": "Graduation Academic and Achievement",
+            "status": "draft",
+            "configPath": "categories/ACA/ACA-003/template.json",
+            "componentPath": "categories/ACA/ACA-003/index.jsx"
+        },
+        {
+            "id": "ACA-004",
+            "name": "Academic Award Ceremony",
+            "category": "ACA",
+            "categoryName": "Graduation Academic and Achievement",
+            "status": "draft",
+            "configPath": "categories/ACA/ACA-004/template.json",
+            "componentPath": "categories/ACA/ACA-004/index.jsx"
+        },
+        {
+            "id": "ACA-005",
+            "name": "School Reunion",
+            "category": "ACA",
+            "categoryName": "Graduation Academic and Achievement",
+            "status": "draft",
+            "configPath": "categories/ACA/ACA-005/template.json",
+            "componentPath": "categories/ACA/ACA-005/index.jsx"
+        },
+        {
+            "id": "ACA-006",
+            "name": "College Reunion",
+            "category": "ACA",
+            "categoryName": "Graduation Academic and Achievement",
+            "status": "draft",
+            "configPath": "categories/ACA/ACA-006/template.json",
+            "componentPath": "categories/ACA/ACA-006/index.jsx"
+        },
+        {
+            "id": "ACA-007",
+            "name": "Academic Conference",
+            "category": "ACA",
+            "categoryName": "Graduation Academic and Achievement",
+            "status": "draft",
+            "configPath": "categories/ACA/ACA-007/template.json",
+            "componentPath": "categories/ACA/ACA-007/index.jsx"
+        },
+        {
+            "id": "ACA-008",
+            "name": "Achievement Announcement",
+            "category": "ACA",
+            "categoryName": "Graduation Academic and Achievement",
+            "status": "draft",
+            "configPath": "categories/ACA/ACA-008/template.json",
+            "componentPath": "categories/ACA/ACA-008/index.jsx"
+        },
+        {
+            "id": "ACA-009",
+            "name": "Course Completion",
+            "category": "ACA",
+            "categoryName": "Graduation Academic and Achievement",
+            "status": "draft",
+            "configPath": "categories/ACA/ACA-009/template.json",
+            "componentPath": "categories/ACA/ACA-009/index.jsx"
+        },
+        {
+            "id": "ACA-010",
+            "name": "Academic Farewell",
+            "category": "ACA",
+            "categoryName": "Graduation Academic and Achievement",
+            "status": "draft",
+            "configPath": "categories/ACA/ACA-010/template.json",
+            "componentPath": "categories/ACA/ACA-010/index.jsx"
+        },
+        {
+            "id": "SOC-001",
+            "name": "Dinner Party",
+            "category": "SOC",
+            "categoryName": "Parties Dinners and Social Gatherings",
+            "status": "draft",
+            "configPath": "categories/SOC/SOC-001/template.json",
+            "componentPath": "categories/SOC/SOC-001/index.jsx"
+        },
+        {
+            "id": "SOC-002",
+            "name": "Cocktail Party",
+            "category": "SOC",
+            "categoryName": "Parties Dinners and Social Gatherings",
+            "status": "draft",
+            "configPath": "categories/SOC/SOC-002/template.json",
+            "componentPath": "categories/SOC/SOC-002/index.jsx"
+        },
+        {
+            "id": "SOC-003",
+            "name": "Garden Party",
+            "category": "SOC",
+            "categoryName": "Parties Dinners and Social Gatherings",
+            "status": "draft",
+            "configPath": "categories/SOC/SOC-003/template.json",
+            "componentPath": "categories/SOC/SOC-003/index.jsx"
+        },
+        {
+            "id": "SOC-004",
+            "name": "Pool Party",
+            "category": "SOC",
+            "categoryName": "Parties Dinners and Social Gatherings",
+            "status": "draft",
+            "configPath": "categories/SOC/SOC-004/template.json",
+            "componentPath": "categories/SOC/SOC-004/index.jsx"
+        },
+        {
+            "id": "SOC-005",
+            "name": "Picnic",
+            "category": "SOC",
+            "categoryName": "Parties Dinners and Social Gatherings",
+            "status": "draft",
+            "configPath": "categories/SOC/SOC-005/template.json",
+            "componentPath": "categories/SOC/SOC-005/index.jsx"
+        },
+        {
+            "id": "SOC-006",
+            "name": "Game Night",
+            "category": "SOC",
+            "categoryName": "Parties Dinners and Social Gatherings",
+            "status": "draft",
+            "configPath": "categories/SOC/SOC-006/template.json",
+            "componentPath": "categories/SOC/SOC-006/index.jsx"
+        },
+        {
+            "id": "SOC-007",
+            "name": "Movie Night",
+            "category": "SOC",
+            "categoryName": "Parties Dinners and Social Gatherings",
+            "status": "draft",
+            "configPath": "categories/SOC/SOC-007/template.json",
+            "componentPath": "categories/SOC/SOC-007/index.jsx"
+        },
+        {
+            "id": "SOC-008",
+            "name": "Karaoke Music Night",
+            "category": "SOC",
+            "categoryName": "Parties Dinners and Social Gatherings",
+            "status": "draft",
+            "configPath": "categories/SOC/SOC-008/template.json",
+            "componentPath": "categories/SOC/SOC-008/index.jsx"
+        },
+        {
+            "id": "SOC-009",
+            "name": "Potluck Gathering",
+            "category": "SOC",
+            "categoryName": "Parties Dinners and Social Gatherings",
+            "status": "draft",
+            "configPath": "categories/SOC/SOC-009/template.json",
+            "componentPath": "categories/SOC/SOC-009/index.jsx"
+        },
+        {
+            "id": "SOC-010",
+            "name": "Friends Get-Together",
+            "category": "SOC",
+            "categoryName": "Parties Dinners and Social Gatherings",
+            "status": "draft",
+            "configPath": "categories/SOC/SOC-010/template.json",
+            "componentPath": "categories/SOC/SOC-010/index.jsx"
+        },
+        {
+            "id": "THK-001",
+            "name": "Wedding Thank You",
+            "category": "THK",
+            "categoryName": "Thank You Cards and Correspondence",
+            "status": "draft",
+            "configPath": "categories/THK/THK-001/template.json",
+            "componentPath": "categories/THK/THK-001/index.jsx"
+        },
+        {
+            "id": "THK-002",
+            "name": "Birthday Thank You",
+            "category": "THK",
+            "categoryName": "Thank You Cards and Correspondence",
+            "status": "draft",
+            "configPath": "categories/THK/THK-002/template.json",
+            "componentPath": "categories/THK/THK-002/index.jsx"
+        },
+        {
+            "id": "THK-003",
+            "name": "Baby Gift Thank You",
+            "category": "THK",
+            "categoryName": "Thank You Cards and Correspondence",
+            "status": "draft",
+            "configPath": "categories/THK/THK-003/template.json",
+            "componentPath": "categories/THK/THK-003/index.jsx"
+        },
+        {
+            "id": "THK-004",
+            "name": "Business Appreciation",
+            "category": "THK",
+            "categoryName": "Thank You Cards and Correspondence",
+            "status": "draft",
+            "configPath": "categories/THK/THK-004/template.json",
+            "componentPath": "categories/THK/THK-004/index.jsx"
+        },
+        {
+            "id": "THK-005",
+            "name": "Client Thank You",
+            "category": "THK",
+            "categoryName": "Thank You Cards and Correspondence",
+            "status": "draft",
+            "configPath": "categories/THK/THK-005/template.json",
+            "componentPath": "categories/THK/THK-005/index.jsx"
+        },
+        {
+            "id": "THK-006",
+            "name": "Teacher Appreciation",
+            "category": "THK",
+            "categoryName": "Thank You Cards and Correspondence",
+            "status": "draft",
+            "configPath": "categories/THK/THK-006/template.json",
+            "componentPath": "categories/THK/THK-006/index.jsx"
+        },
+        {
+            "id": "THK-007",
+            "name": "Congratulations Card",
+            "category": "THK",
+            "categoryName": "Thank You Cards and Correspondence",
+            "status": "draft",
+            "configPath": "categories/THK/THK-007/template.json",
+            "componentPath": "categories/THK/THK-007/index.jsx"
+        },
+        {
+            "id": "THK-008",
+            "name": "Friendship Card",
+            "category": "THK",
+            "categoryName": "Thank You Cards and Correspondence",
+            "status": "draft",
+            "configPath": "categories/THK/THK-008/template.json",
+            "componentPath": "categories/THK/THK-008/index.jsx"
+        },
+        {
+            "id": "THK-009",
+            "name": "Personal Gratitude Note",
+            "category": "THK",
+            "categoryName": "Thank You Cards and Correspondence",
+            "status": "draft",
+            "configPath": "categories/THK/THK-009/template.json",
+            "componentPath": "categories/THK/THK-009/index.jsx"
+        },
+        {
+            "id": "THK-010",
+            "name": "Gift Enclosure Card",
+            "category": "THK",
+            "categoryName": "Thank You Cards and Correspondence",
+            "status": "draft",
+            "configPath": "categories/THK/THK-010/template.json",
+            "componentPath": "categories/THK/THK-010/index.jsx"
+        },
+        {
+            "id": "MEM-001",
+            "name": "Memorial Announcement",
+            "category": "MEM",
+            "categoryName": "Memorials and Remembrance",
+            "status": "draft",
+            "configPath": "categories/MEM/MEM-001/template.json",
+            "componentPath": "categories/MEM/MEM-001/index.jsx"
+        },
+        {
+            "id": "MEM-002",
+            "name": "Prayer Meeting",
+            "category": "MEM",
+            "categoryName": "Memorials and Remembrance",
+            "status": "draft",
+            "configPath": "categories/MEM/MEM-002/template.json",
+            "componentPath": "categories/MEM/MEM-002/index.jsx"
+        },
+        {
+            "id": "MEM-003",
+            "name": "Celebration of Life",
+            "category": "MEM",
+            "categoryName": "Memorials and Remembrance",
+            "status": "draft",
+            "configPath": "categories/MEM/MEM-003/template.json",
+            "componentPath": "categories/MEM/MEM-003/index.jsx"
+        },
+        {
+            "id": "MEM-004",
+            "name": "Remembrance Card",
+            "category": "MEM",
+            "categoryName": "Memorials and Remembrance",
+            "status": "draft",
+            "configPath": "categories/MEM/MEM-004/template.json",
+            "componentPath": "categories/MEM/MEM-004/index.jsx"
+        },
+        {
+            "id": "MEM-005",
+            "name": "Anniversary Remembrance",
+            "category": "MEM",
+            "categoryName": "Memorials and Remembrance",
+            "status": "draft",
+            "configPath": "categories/MEM/MEM-005/template.json",
+            "componentPath": "categories/MEM/MEM-005/index.jsx"
+        },
+        {
+            "id": "MEM-006",
+            "name": "Funeral Service",
+            "category": "MEM",
+            "categoryName": "Memorials and Remembrance",
+            "status": "draft",
+            "configPath": "categories/MEM/MEM-006/template.json",
+            "componentPath": "categories/MEM/MEM-006/index.jsx"
+        },
+        {
+            "id": "MEM-007",
+            "name": "Memorial Photo Card",
+            "category": "MEM",
+            "categoryName": "Memorials and Remembrance",
+            "status": "draft",
+            "configPath": "categories/MEM/MEM-007/template.json",
+            "componentPath": "categories/MEM/MEM-007/index.jsx"
+        },
+        {
+            "id": "MEM-008",
+            "name": "Tribute Condolence Card",
+            "category": "MEM",
+            "categoryName": "Memorials and Remembrance",
+            "status": "draft",
+            "configPath": "categories/MEM/MEM-008/template.json",
+            "componentPath": "categories/MEM/MEM-008/index.jsx"
+        },
+        {
+            "id": "MEM-009",
+            "name": "Religious Remembrance",
+            "category": "MEM",
+            "categoryName": "Memorials and Remembrance",
+            "status": "draft",
+            "configPath": "categories/MEM/MEM-009/template.json",
+            "componentPath": "categories/MEM/MEM-009/index.jsx"
+        },
+        {
+            "id": "MEM-010",
+            "name": "Online Memorial Gathering",
+            "category": "MEM",
+            "categoryName": "Memorials and Remembrance",
+            "status": "draft",
+            "configPath": "categories/MEM/MEM-010/template.json",
+            "componentPath": "categories/MEM/MEM-010/index.jsx"
+        },
+        {
+            "id": "ANN-001",
+            "name": "Save the Date",
+            "category": "ANN",
+            "categoryName": "Announcements and Everyday Invitations",
+            "status": "draft",
+            "configPath": "categories/ANN/ANN-001/template.json",
+            "componentPath": "categories/ANN/ANN-001/index.jsx"
+        },
+        {
+            "id": "ANN-002",
+            "name": "Moving Announcement",
+            "category": "ANN",
+            "categoryName": "Announcements and Everyday Invitations",
+            "status": "draft",
+            "configPath": "categories/ANN/ANN-002/template.json",
+            "componentPath": "categories/ANN/ANN-002/index.jsx"
+        },
+        {
+            "id": "ANN-003",
+            "name": "New Address Announcement",
+            "category": "ANN",
+            "categoryName": "Announcements and Everyday Invitations",
+            "status": "draft",
+            "configPath": "categories/ANN/ANN-003/template.json",
+            "componentPath": "categories/ANN/ANN-003/index.jsx"
+        },
+        {
+            "id": "ANN-004",
+            "name": "Community Gathering",
+            "category": "ANN",
+            "categoryName": "Announcements and Everyday Invitations",
+            "status": "draft",
+            "configPath": "categories/ANN/ANN-004/template.json",
+            "componentPath": "categories/ANN/ANN-004/index.jsx"
+        },
+        {
+            "id": "ANN-005",
+            "name": "Charity Fundraiser",
+            "category": "ANN",
+            "categoryName": "Announcements and Everyday Invitations",
+            "status": "draft",
+            "configPath": "categories/ANN/ANN-005/template.json",
+            "componentPath": "categories/ANN/ANN-005/index.jsx"
+        },
+        {
+            "id": "ANN-006",
+            "name": "Volunteer Event",
+            "category": "ANN",
+            "categoryName": "Announcements and Everyday Invitations",
+            "status": "draft",
+            "configPath": "categories/ANN/ANN-006/template.json",
+            "componentPath": "categories/ANN/ANN-006/index.jsx"
+        },
+        {
+            "id": "ANN-007",
+            "name": "Club Membership Invitation",
+            "category": "ANN",
+            "categoryName": "Announcements and Everyday Invitations",
+            "status": "draft",
+            "configPath": "categories/ANN/ANN-007/template.json",
+            "componentPath": "categories/ANN/ANN-007/index.jsx"
+        },
+        {
+            "id": "ANN-008",
+            "name": "Religious Spiritual Gathering",
+            "category": "ANN",
+            "categoryName": "Announcements and Everyday Invitations",
+            "status": "draft",
+            "configPath": "categories/ANN/ANN-008/template.json",
+            "componentPath": "categories/ANN/ANN-008/index.jsx"
+        },
+        {
+            "id": "ANN-009",
+            "name": "Neighbourhood Event",
+            "category": "ANN",
+            "categoryName": "Announcements and Everyday Invitations",
+            "status": "draft",
+            "configPath": "categories/ANN/ANN-009/template.json",
+            "componentPath": "categories/ANN/ANN-009/index.jsx"
+        },
+        {
+            "id": "ANN-010",
+            "name": "Personal Life Update",
+            "category": "ANN",
+            "categoryName": "Announcements and Everyday Invitations",
+            "status": "draft",
+            "configPath": "categories/ANN/ANN-010/template.json",
+            "componentPath": "categories/ANN/ANN-010/index.jsx"
+        },
+        {
+            "id": "PST-001",
+            "name": "Concert Poster",
+            "category": "PST",
+            "categoryName": "Posters Flyers and Digital Event Graphics",
+            "status": "draft",
+            "configPath": "categories/PST/PST-001/template.json",
+            "componentPath": "categories/PST/PST-001/index.jsx"
+        },
+        {
+            "id": "PST-002",
+            "name": "Music Festival Poster",
+            "category": "PST",
+            "categoryName": "Posters Flyers and Digital Event Graphics",
+            "status": "draft",
+            "configPath": "categories/PST/PST-002/template.json",
+            "componentPath": "categories/PST/PST-002/index.jsx"
+        },
+        {
+            "id": "PST-003",
+            "name": "Art Exhibition Poster",
+            "category": "PST",
+            "categoryName": "Posters Flyers and Digital Event Graphics",
+            "status": "draft",
+            "configPath": "categories/PST/PST-003/template.json",
+            "componentPath": "categories/PST/PST-003/index.jsx"
+        },
+        {
+            "id": "PST-004",
+            "name": "Photography Exhibition",
+            "category": "PST",
+            "categoryName": "Posters Flyers and Digital Event Graphics",
+            "status": "draft",
+            "configPath": "categories/PST/PST-004/template.json",
+            "componentPath": "categories/PST/PST-004/index.jsx"
+        },
+        {
+            "id": "PST-005",
+            "name": "Workshop Flyer",
+            "category": "PST",
+            "categoryName": "Posters Flyers and Digital Event Graphics",
+            "status": "draft",
+            "configPath": "categories/PST/PST-005/template.json",
+            "componentPath": "categories/PST/PST-005/index.jsx"
+        },
+        {
+            "id": "PST-006",
+            "name": "Webinar Poster",
+            "category": "PST",
+            "categoryName": "Posters Flyers and Digital Event Graphics",
+            "status": "draft",
+            "configPath": "categories/PST/PST-006/template.json",
+            "componentPath": "categories/PST/PST-006/index.jsx"
+        },
+        {
+            "id": "PST-007",
+            "name": "Fitness Sports Poster",
+            "category": "PST",
+            "categoryName": "Posters Flyers and Digital Event Graphics",
+            "status": "draft",
+            "configPath": "categories/PST/PST-007/template.json",
+            "componentPath": "categories/PST/PST-007/index.jsx"
+        },
+        {
+            "id": "PST-008",
+            "name": "Food Festival Flyer",
+            "category": "PST",
+            "categoryName": "Posters Flyers and Digital Event Graphics",
+            "status": "draft",
+            "configPath": "categories/PST/PST-008/template.json",
+            "componentPath": "categories/PST/PST-008/index.jsx"
+        },
+        {
+            "id": "PST-009",
+            "name": "Community Notice",
+            "category": "PST",
+            "categoryName": "Posters Flyers and Digital Event Graphics",
+            "status": "draft",
+            "configPath": "categories/PST/PST-009/template.json",
+            "componentPath": "categories/PST/PST-009/index.jsx"
+        },
+        {
+            "id": "PST-010",
+            "name": "Event Schedule Programme",
+            "category": "PST",
+            "categoryName": "Posters Flyers and Digital Event Graphics",
+            "status": "draft",
+            "configPath": "categories/PST/PST-010/template.json",
+            "componentPath": "categories/PST/PST-010/index.jsx"
+        },
+        {
+            "id": "DIG-001",
+            "name": "Good Morning",
+            "category": "DIG",
+            "categoryName": "Digital Greetings and Social Sharing",
+            "status": "draft",
+            "configPath": "categories/DIG/DIG-001/template.json",
+            "componentPath": "categories/DIG/DIG-001/index.jsx"
+        },
+        {
+            "id": "DIG-002",
+            "name": "Good Night",
+            "category": "DIG",
+            "categoryName": "Digital Greetings and Social Sharing",
+            "status": "draft",
+            "configPath": "categories/DIG/DIG-002/template.json",
+            "componentPath": "categories/DIG/DIG-002/index.jsx"
+        },
+        {
+            "id": "DIG-003",
+            "name": "Congratulations",
+            "category": "DIG",
+            "categoryName": "Digital Greetings and Social Sharing",
+            "status": "draft",
+            "configPath": "categories/DIG/DIG-003/template.json",
+            "componentPath": "categories/DIG/DIG-003/index.jsx"
+        },
+        {
+            "id": "DIG-004",
+            "name": "Best Wishes",
+            "category": "DIG",
+            "categoryName": "Digital Greetings and Social Sharing",
+            "status": "draft",
+            "configPath": "categories/DIG/DIG-004/template.json",
+            "componentPath": "categories/DIG/DIG-004/index.jsx"
+        },
+        {
+            "id": "DIG-005",
+            "name": "Friendship Greeting",
+            "category": "DIG",
+            "categoryName": "Digital Greetings and Social Sharing",
+            "status": "draft",
+            "configPath": "categories/DIG/DIG-005/template.json",
+            "componentPath": "categories/DIG/DIG-005/index.jsx"
+        },
+        {
+            "id": "DIG-006",
+            "name": "Thank You Social Card",
+            "category": "DIG",
+            "categoryName": "Digital Greetings and Social Sharing",
+            "status": "draft",
+            "configPath": "categories/DIG/DIG-006/template.json",
+            "componentPath": "categories/DIG/DIG-006/index.jsx"
+        },
+        {
+            "id": "DIG-007",
+            "name": "Inspirational Quote",
+            "category": "DIG",
+            "categoryName": "Digital Greetings and Social Sharing",
+            "status": "draft",
+            "configPath": "categories/DIG/DIG-007/template.json",
+            "componentPath": "categories/DIG/DIG-007/index.jsx"
+        },
+        {
+            "id": "DIG-008",
+            "name": "Holiday Greeting",
+            "category": "DIG",
+            "categoryName": "Digital Greetings and Social Sharing",
+            "status": "draft",
+            "configPath": "categories/DIG/DIG-008/template.json",
+            "componentPath": "categories/DIG/DIG-008/index.jsx"
+        },
+        {
+            "id": "DIG-009",
+            "name": "Milestone Announcement",
+            "category": "DIG",
+            "categoryName": "Digital Greetings and Social Sharing",
+            "status": "draft",
+            "configPath": "categories/DIG/DIG-009/template.json",
+            "componentPath": "categories/DIG/DIG-009/index.jsx"
+        },
+        {
+            "id": "DIG-010",
+            "name": "Personalised Photo Greeting",
+            "category": "DIG",
+            "categoryName": "Digital Greetings and Social Sharing",
+            "status": "draft",
+            "configPath": "categories/DIG/DIG-010/template.json",
+            "componentPath": "categories/DIG/DIG-010/index.jsx"
+        }
+    ],
+    "categories": [
+        {
+            "templateCount": 10,
+            "name": "Wedding Invitations and Stationery",
+            "id": "WED"
+        },
+        {
+            "templateCount": 10,
+            "name": "Birthday Invitations",
+            "id": "BIR"
+        },
+        {
+            "templateCount": 10,
+            "name": "Baby Pregnancy and Family Announcements",
+            "id": "BAB"
+        },
+        {
+            "templateCount": 10,
+            "name": "Engagements and Pre-Wedding Events",
+            "id": "ENG"
+        },
+        {
+            "templateCount": 10,
+            "name": "Housewarming and Personal Milestones",
+            "id": "HOM"
+        },
+        {
+            "templateCount": 10,
+            "name": "Corporate Events and Conferences",
+            "id": "COR"
+        },
+        {
+            "templateCount": 10,
+            "name": "Business Promotions and Marketing",
+            "id": "MKT"
+        },
+        {
+            "templateCount": 10,
+            "name": "Festivals and Seasonal Celebrations",
+            "id": "FES"
+        },
+        {
+            "templateCount": 10,
+            "name": "Graduation Academic and Achievement",
+            "id": "ACA"
+        },
+        {
+            "templateCount": 10,
+            "name": "Parties Dinners and Social Gatherings",
+            "id": "SOC"
+        },
+        {
+            "templateCount": 10,
+            "name": "Thank You Cards and Correspondence",
+            "id": "THK"
+        },
+        {
+            "templateCount": 10,
+            "name": "Memorials and Remembrance",
+            "id": "MEM"
+        },
+        {
+            "templateCount": 10,
+            "name": "Announcements and Everyday Invitations",
+            "id": "ANN"
+        },
+        {
+            "templateCount": 10,
+            "name": "Posters Flyers and Digital Event Graphics",
+            "id": "PST"
+        },
+        {
+            "templateCount": 10,
+            "name": "Digital Greetings and Social Sharing",
+            "id": "DIG"
+        }
+    ],
+    "version": 1,
+    "totalCategories": 15
+}

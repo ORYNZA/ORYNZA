@@ -1,0 +1,90 @@
+﻿[
+    {
+        "name":  "Classic and Neutral",
+        "id":  "classic-neutral",
+        "colors":  [
+                       "#FFFFFF",
+                       "#F5F0E8",
+                       "#D9C7A3",
+                       "#8B7355",
+                       "#242424"
+                   ]
+    },
+    {
+        "name":  "Romantic and Soft",
+        "id":  "romantic-soft",
+        "colors":  [
+                       "#F8D7DA",
+                       "#E8B4B8",
+                       "#B76E79",
+                       "#F5E6D3",
+                       "#FFFFFF"
+                   ]
+    },
+    {
+        "name":  "Royal and Luxury",
+        "id":  "royal-luxury",
+        "colors":  [
+                       "#153448",
+                       "#1D5B4F",
+                       "#C9A227",
+                       "#F5E8C7",
+                       "#722F37"
+                   ]
+    },
+    {
+        "name":  "Pastel and Playful",
+        "id":  "pastel-playful",
+        "colors":  [
+                       "#FFC0CB",
+                       "#BDE0FE",
+                       "#CDB4DB",
+                       "#CAFFBF",
+                       "#FDFFB6"
+                   ]
+    },
+    {
+        "name":  "Earthy and Organic",
+        "id":  "earthy-organic",
+        "colors":  [
+                       "#E2725B",
+                       "#BCB88A",
+                       "#556B2F",
+                       "#D8C3A5",
+                       "#FAF3E0"
+                   ]
+    },
+    {
+        "name":  "Modern and Corporate",
+        "id":  "modern-corporate",
+        "colors":  [
+                       "#0F172A",
+                       "#2563EB",
+                       "#06B6D4",
+                       "#94A3B8",
+                       "#F8FAFC"
+                   ]
+    },
+    {
+        "name":  "Vibrant and Energetic",
+        "id":  "vibrant-energy",
+        "colors":  [
+                       "#FF4D6D",
+                       "#FF9F1C",
+                       "#FFD60A",
+                       "#00C2A8",
+                       "#5A4BFF"
+                   ]
+    },
+    {
+        "name":  "Dark and Dramatic",
+        "id":  "dark-dramatic",
+        "colors":  [
+                       "#080808",
+                       "#242424",
+                       "#722F37",
+                       "#9B7B39",
+                       "#E7D8C9"
+                   ]
+    }
+]

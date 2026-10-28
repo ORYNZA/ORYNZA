@@ -57,7 +57,7 @@ function Studio() {
 }
 
 export default function Designs() {
-  useMeta('Invitation designs', 'Browse six ORYNZA digital invitation styles, from Timeless Ivory & Gold to Elegant Evening Reception, and request the one you love.');
+  useMeta('Invitation designs', 'Browse six ORYNZA digital invitation styles, from Royal Lake Palace to Elegant Evening Reception, and request the one you love.');
   return (
     <>
       <PageHeader title="Invitation designs" lead="Six starting points, from quiet and classic to rich and festive. Try your own names below." />

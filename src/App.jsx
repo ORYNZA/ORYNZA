@@ -3,6 +3,7 @@ import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import InvitationPage from './pages/InvitationPage';
 import NotFoundPage from './pages/NotFoundPage';
+import RoyalLakePalaceTemplate from './templates/categories/WED/WED-001/index';
 
 function SectionRedirect({ targetSection }) {
   useEffect(() => {
@@ -20,9 +21,7 @@ export default function App() {
     if (hash) {
       const el = document.querySelector(hash);
       if (el) {
-        setTimeout(() => {
-          el.scrollIntoView({ behavior: 'smooth' });
-        }, 50);
+        el.scrollIntoView({ behavior: 'auto' });
       }
     } else if (pathname === '/') {
       window.scrollTo(0, 0);
@@ -33,6 +32,12 @@ export default function App() {
     <Routes>
       {/* Primary Homepage with all 12 sections */}
       <Route path="/" element={<HomePage />} />
+
+      {/* ORYNZA Template 1 — Royal Lake Palace */}
+      <Route path="/template/1" element={<RoyalLakePalaceTemplate />} />
+      <Route path="/templates/1" element={<Navigate to="/template/1" replace />} />
+      <Route path="/templates/WED-001" element={<RoyalLakePalaceTemplate />} />
+      <Route path="/invite/royal-lake-palace" element={<RoyalLakePalaceTemplate />} />
 
       {/* Reusable Couple Wedding Invitation Routes */}
       <Route path="/invite/:slug" element={<InvitationPage />} />

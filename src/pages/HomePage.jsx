@@ -18,8 +18,8 @@ import { SITE } from '../config/site';
 
 export default function HomePage() {
   const [selectedPackage, setSelectedPackage] = useState('Wedding Plus');
-  const [selectedDesign, setSelectedDesign] = useState('Timeless Ivory & Gold');
-  const [studioActiveId, setStudioActiveId] = useState('timeless-ivory-gold');
+  const [selectedDesign, setSelectedDesign] = useState('Royal Lake Palace');
+  const [studioActiveId, setStudioActiveId] = useState('royal-lake-palace');
 
   const scrollToContact = () => {
     const contactEl = document.getElementById('contact');

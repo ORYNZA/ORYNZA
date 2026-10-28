@@ -1,0 +1,34 @@
+﻿{
+    "layoutOptions":  [
+                          "portrait",
+                          "square",
+                          "landscape"
+                      ],
+    "backgroundTypes":  [
+                            "solid",
+                            "gradient",
+                            "image",
+                            "pattern"
+                        ],
+    "typographyFields":  [
+                             "headingFont",
+                             "bodyFont",
+                             "headingSize",
+                             "bodySize"
+                         ],
+    "outputFormats":  [
+                          "png",
+                          "jpg",
+                          "pdf"
+                      ],
+    "colorFields":  [
+                        "primary",
+                        "secondary",
+                        "accent",
+                        "background",
+                        "heading",
+                        "body",
+                        "border",
+                        "decoration"
+                    ]
+}

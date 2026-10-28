@@ -1,0 +1,62 @@
+﻿{
+    "id":  "PST-010",
+    "name":  "Event Schedule Programme",
+    "category":  "PST",
+    "categoryName":  "Posters Flyers and Digital Event Graphics",
+    "description":  "",
+    "status":  "draft",
+    "version":  "1.0.0",
+    "style":  "modern",
+    "paletteIds":  [
+                       "classic-neutral",
+                       "romantic-soft",
+                       "royal-luxury",
+                       "pastel-playful",
+                       "earthy-organic",
+                       "modern-corporate",
+                       "vibrant-energy",
+                       "dark-dramatic"
+                   ],
+    "defaultPalette":  "classic-neutral",
+    "customColors":  true,
+    "editableFields":  [
+                           "title",
+                           "subtitle",
+                           "date",
+                           "time",
+                           "venue",
+                           "message",
+                           "contact"
+                       ],
+    "customization":  {
+                          "typography":  true,
+                          "background":  true,
+                          "imageUpload":  false,
+                          "qrCode":  false,
+                          "decorativeElements":  true,
+                          "logo":  false,
+                          "layoutVariants":  [
+                                                 "portrait",
+                                                 "square",
+                                                 "landscape"
+                                             ]
+                      },
+    "rsvp":  {
+                 "default":  "optional",
+                 "deadline":  null,
+                 "dietaryPreferences":  false,
+                 "guestLimit":  2,
+                 "options":  [
+                                 "attending",
+                                 "not-attending",
+                                 "maybe"
+                             ],
+                 "enabled":  true
+             },
+    "tags":  [
+                 "PST",
+                 "Event Schedule Programme"
+             ],
+    "preview":  "/templates/previews/PST-010.webp",
+    "createdAt":  "2026-10-27"
+}

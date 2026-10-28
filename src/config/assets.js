@@ -26,6 +26,7 @@ export const ASSETS = {
     sageBotanical: assetUrl('/assets/decorative/orynza-sage-botanical.png'),
   },
   mockups: {
+    royalLakePalace: assetUrl('/assets/invitation-mockups/design-royal-lake-palace.png'),
     timelessIvoryGold: assetUrl('/assets/invitation-mockups/design-timeless-ivory-gold.png'),
     botanicalSage: assetUrl('/assets/invitation-mockups/design-botanical-sage.png'),
     blushRomance: assetUrl('/assets/invitation-mockups/design-blush-romance.png'),

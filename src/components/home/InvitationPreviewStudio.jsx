@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { INVITATION_DESIGNS } from '../../data/designs';
 import { ASSETS } from '../../config/assets';
@@ -11,6 +11,13 @@ export default function InvitationPreviewStudio({ activeDesignId, onSelectDesign
     }
     return 0;
   });
+
+  useEffect(() => {
+    if (activeDesignId) {
+      const idx = INVITATION_DESIGNS.findIndex(d => d.id === activeDesignId);
+      if (idx >= 0) setCurrentIndex(idx);
+    }
+  }, [activeDesignId]);
 
   const currentDesign = INVITATION_DESIGNS[currentIndex] || INVITATION_DESIGNS[0];
 

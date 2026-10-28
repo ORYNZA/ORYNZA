@@ -2,19 +2,19 @@ import { ASSETS } from '../config/assets';
 
 export const INVITATION_DESIGNS = [
   {
-    id: 'timeless-ivory-gold',
-    name: 'Timeless Ivory & Gold',
-    category: 'classic',
-    categoryLabel: 'Classic & Timeless',
-    tagline: 'Regal Gold Foil & Heirloom Ivory',
-    description: 'Understated stationery with double champagne-gold hairline borders, delicate corner florets, and classical serif typography for couples who appreciate royal timelessness.',
-    image: ASSETS.mockups.timelessIvoryGold,
-    alt: 'Timeless Ivory and Gold digital wedding invitation preview with delicate gold borders and refined typography',
-    palette: ['#F8F5EF', '#A7874E', '#80632F', '#292820'],
-    paletteNames: ['Warm Ivory', 'Champagne Gold', 'Deep Gold', 'Charcoal'],
-    ceremonies: ['Wedding Ceremony', 'Grand Reception', 'Engagement'],
-    demoSlug: 'demo-wedding',
-    vibe: 'classic',
+    id: 'royal-lake-palace',
+    name: 'Royal Lake Palace',
+    category: 'destination',
+    categoryLabel: 'Destination Weddings',
+    tagline: 'Udaipur Luxury Wedding',
+    description: 'A sophisticated Indian destination-wedding invitation inspired by Udaipur’s heritage palaces, lakeside scenery, champagne-gold detailing, blush florals, and refined ceremonial styling.',
+    image: ASSETS.mockups.royalLakePalace,
+    alt: 'Royal Lake Palace digital wedding invitation preview with Udaipur palace architecture and refined ceremonial styling',
+    palette: ['#F8E9DF', '#8F2637', '#F2D7C6', '#25483B', '#D5AC78', '#54251F'],
+    paletteNames: ['Blush Ivory', 'Burgundy', 'Champagne Peach', 'Garden Green', 'Antique Gold', 'Deep Brown'],
+    ceremonies: ['Wedding Ceremony', 'Destination Wedding', 'Grand Reception'],
+    demoSlug: 'royal-lake-palace',
+    vibe: 'royal',
     badge: 'Signature Atelier',
   },
   {
@@ -104,7 +104,7 @@ export const INVITATION_DESIGNS = [
  */
 export const DESIGN_CATEGORIES = [
   { id: 'all', label: 'All Collections' },
-  { id: 'classic', label: 'Classic & Timeless' },
+  { id: 'destination', label: 'Destination Weddings' },
   { id: 'botanical', label: 'Botanical & Foliage' },
   { id: 'romantic', label: 'Romantic & Floral' },
   { id: 'minimal', label: 'Modern & Minimal' },

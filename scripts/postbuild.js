@@ -11,7 +11,14 @@ if (fs.existsSync(dist)) {
     console.log('✓ Created dist/404.html for GitHub Pages SPA routing');
 
     // 2. Pre-generate static entries for known demo routes
-    const routes = ['invite/demo-wedding', 'invite/example-couple'];
+    const routes = [
+      'invite/demo-wedding',
+      'invite/example-couple',
+      'template/1',
+      'templates/1',
+      'templates/WED-001',
+      'invite/royal-lake-palace'
+    ];
     for (const route of routes) {
       const routeDir = path.join(dist, route);
       fs.mkdirSync(routeDir, { recursive: true });

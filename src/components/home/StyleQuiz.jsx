@@ -7,7 +7,7 @@ const QUESTIONS = [
     question: '1. What is the atmosphere of your celebration?',
     subtitle: 'Choose the visual mood that resonates most with your wedding vision.',
     options: [
-      { label: 'Royal Ballroom & Classical Grace', designId: 'timeless-ivory-gold', icon: '🏛️' },
+      { label: 'Royal Heritage Palace & Destination Luxury', designId: 'royal-lake-palace', icon: '🏛️' },
       { label: 'Lush Garden Lawn & Open-Air Vows', designId: 'botanical-sage', icon: '🌿' },
       { label: 'Romantic Pastel Sangeet & Florals', designId: 'blush-romance', icon: '🌸' },
       { label: 'Sleek Contemporary & Pure Editorial', designId: 'modern-minimal', icon: '📐' },
@@ -20,7 +20,7 @@ const QUESTIONS = [
     question: '2. Which color harmony feels right for you?',
     subtitle: 'The shades that will weave through your digital stationery suite.',
     options: [
-      { label: 'Warm Ivory, Champagne & Antique Gold', designId: 'timeless-ivory-gold', icon: '🟡' },
+      { label: 'Udaipur Blush, Champagne & Antique Gold', designId: 'royal-lake-palace', icon: '🟡' },
       { label: 'Eucalyptus, Sage & Soft Foliage Greens', designId: 'botanical-sage', icon: '🟢' },
       { label: 'Soft Dusty Rose, Coral & Tender Blush', designId: 'blush-romance', icon: '🌸' },
       { label: 'Porcelain White, Ink Black & Slate', designId: 'modern-minimal', icon: '⚪' },
@@ -55,7 +55,7 @@ export default function StyleQuiz({ onSelectRecommendation }) {
     } else {
       // Calculate recommendation
       // Prioritize question 1 and 2 design preferences
-      const chosenDesignId = (updated.vibe && updated.vibe.designId) || (updated.palette && updated.palette.designId) || 'timeless-ivory-gold';
+      const chosenDesignId = (updated.vibe && updated.vibe.designId) || (updated.palette && updated.palette.designId) || 'royal-lake-palace';
       const design = INVITATION_DESIGNS.find((d) => d.id === chosenDesignId) || INVITATION_DESIGNS[0];
       const pkg = (updated.scale && updated.scale.packagePref) || 'Wedding Plus';
       
