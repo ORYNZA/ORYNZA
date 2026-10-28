@@ -47,6 +47,29 @@ This directory serves as the centralized repository for shared, multi-template v
 
 ---
 
+### 3. `goa-floral-frame.png`
+- **Relative Path**: `src/templates/common assets/goa-floral-frame.png`
+- **Asset Category**: Tropical Botanical Border & Overlay
+- **Verified Format**: PNG (Portable Network Graphics)
+- **Verified Dimensions**: 1448 × 1086 px
+- **Aspect Ratio**: 4:3 (approx. 1.333:1)
+- **Alpha Transparency**: Yes (RGBA with full 8-bit alpha channel, 0 to 255)
+- **Main Colors**:
+  - Warm Terracotta: `#E79B7B`
+  - Tropical Coral: `#B85C3E`
+  - Golden Ochre: `#F4C563`
+  - Deep Tropical Green: `#0F3E3A`
+  - Warm Sand: `#E8D7C9`
+- **Visual Subject & Style**: Tropical coastal botanical and floral stationery border featuring lush palm fronds, bougainvillea, coastal greenery, and delicate floral accents.
+- **Intended Usage**: Hero transition overlays, RSVP card decorative accents, Section dividers, and closing beach finale frames.
+- **Recommended Background & Contrast**: Best layered over light sand/ivory (`#FBF7F2`, `#E8D7C9`) or over sunset photography with `mix-blend-mode: multiply` and `opacity: 0.35–0.55`.
+- **Responsive Guidance**: Must always be set with `pointer-events: none` and `aria-hidden="true"`. Scale using `object-fit: cover` or corner anchoring.
+- **First Introduced**: `WED-002` (Sunset Shores)
+- **Suitability for Reuse**: High (Coastal, Destination, Beach, Summer Weddings `WED`, Engagements `ENG`).
+- **Source & Provenance**: Custom bespoke ORYNZA invitation stationery asset created for `WED-002`.
+
+---
+
 ## Library Conventions & Guidelines
 
 1. **Format Standards**: Transparent decorative overlays must be genuine 8-bit or 16-bit RGBA PNGs. Opaque scenic photographs should be web-optimized RGB PNG or WebP.
@@ -58,4 +81,5 @@ This directory serves as the centralized repository for shared, multi-template v
 
 ## Change History
 
+- **2026-10-28**: Added reusable tropical coastal stationery frame `goa-floral-frame.png` (1448 × 1086 px) for `WED-002` (Sunset Shores) with full alpha channel specifications.
 - **2026-10-28**: Initialized Common Assets Library. Added verified official brand mark `orynza-logo.png` (2172 × 724 px) and reusable botanical stationery frame `royal-floral-frame.png` (1448 × 1086 px) with comprehensive metadata and responsive specifications.
